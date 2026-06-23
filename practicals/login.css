@@ -1,0 +1,10 @@
+body{
+    background-color: lightpink;
+
+    text-align: center;
+    font-style: oblique;
+}
+fieldset{
+    text-size-adjust: 10;
+    color: aliceblue;
+}
