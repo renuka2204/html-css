@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+</head>
+<style>
+    body {
+        border: 5px solid red;
+        height: 300vh;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    h1 {
+        border: 3px solid rgb(246, 70, 70);
+        width: 1000px;
+        height: 50px;
+        margin: 0px 250px;
+        color: deeppink;
+        text-align: center;
+        background-color: antiquewhite;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        margin: 0px 150px;
+        font-size: 20px;
+    }
+
+    .mycnt {
+        border-color: 2px solid black;
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        height: 100px;
+        position: static;
+    }
+
+    .yellow {
+        background-color: yellow;
+        width: 200px;
+        height: 200px;
+        margin-left: 350px;
+        margin-right: 10px;
+        position: relative;
+        top: 50px;
+        right: 50px;
+        left: 10px;
+        bottom: 150px;
+    }
+
+    .pinkcnt {
+        background-color: pink;
+        width: 200px;
+        height: 200px;
+        margin-left: 130px;
+        margin-right: 10px;
+        position: absolute;
+        left: 900px;
+        right: 1000px;
+    }
+
+    .bluecnt {
+        background-color: blue;
+        color: aliceblue;
+        width: 200px;
+        height: 200px;
+        margin-left: 110px;
+        margin-right: 10px;
+        position: sticky;
+        top: 400px;
+        left: 500px;
+    }
+
+    .img {
+        margin-left: 1400px;
+        margin-top: 300px;
+        border: 2px solid black;
+        position: sticky;
+        position: fixed;
+        border-radius: 50%;
+    }
+</style>
+
+<body><br><br>
+
+    <h1>Myntra</h1>
+    <nav><br><br>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="mycnt">
+        <div class="yellow">1</div>
+        <div class="bluecnt">2</div>
+        <div class="pinkcnt">3</div>
+    </div><br><br>
+    <img class="img" width="50" height="50"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAACUCAMAAADrljhyAAAAaVBMVEX///8AAAD6+vrq6urj4+OYmJgEBATT09Pz8/PPz8/39/ft7e3GxsZJSUnJycng4OA4ODgjIyNkZGRpaWm1tbV3d3dQUFBYWFhBQUEXFxeCgoKenp4qKipdXV3Z2dmtra2Li4sxMTEQEBAggowwAAAD+0lEQVR4nO2c25KiQAyGCWcRRAUUwQP6/g+5wM44SKcP7lSRWNvftRd/pdLp9J+g41gsFovFYrFYLJb/ijj1qCW8xXUPAAG1CnP8AEY+RvItgy821FKM8J56Q9j61Gr0JLcQJhQJtSAdfgGv3KgVaVhlM8Fwyqk1KSkfEIYzyXdqUSpu8wCPtNSy5JSY3hB2EbUwGaszGmKAimm9yIVDx7xeuI1UMJxZ9kSRXHCfF9TqMA4qxbCilifiq/SGcIipBQp0yhBDyO7wuUe1Yqi5Hb5oq1EMHbXEGX1DoYNZp9xqBUNBrfGVQK/4xKrCqS68J3uXWuYEI8WnlFrmFE05/goyp2vE4OT1lNQyJ5QnE8UPapkT8vrjgnwxUnykljkBfeMJHKhlTnD1ckNeWeFUBiHm5QNctXp3rCLsOInu7N3ZObO4IfTM4TOrRmhE4Vf0nNlF2FF1nCFkV2p1GP5dKjljaslKG7iaZYR7YlkO8zt03+BB5udV/OCjfmzG1IwdQctFR61KBVqTOVbiH7DXEzf/6pUEcbPW1KLUpJ+WFY4zn5kyNegnXIUKx36aLlY47lsWa2EiErKyrxDmhy+EHdPW7Yl4+PbUkjT4u49LZbEoP5i9o+ckop1859sjjyBtZ/15lzUnlxBDyIsQKk5zEJH4AOFMMfeCkYqpzPnBN4A198yva/HqY7zkNLJG3iNsvZa/ICUOtpytANygPbOW7GIm0YX15RdjY76C07BXwJvvnQ4cWV9+K7FX7iWzjvIN28cpWOcyatHuWVcM5O7rrxLOkpM9Kln3vnYJHUYPnZtt1T1GXF0qusch8rgGzd5QMuTS40jWOXmI5L5S36SFOf5O/suVqHhv7liUoZEV5smjqyOKM/IkGTjix+vFbbw3NNV7g+8+7TA/fG6P7lqSS3Ij+ZQhENQg12RdUtTvFM9lKGaOeIlWlorCVEK7ojGA019tsHZvSI2OoGrEsm9cLvm3mkS1nZgur9mXLq835Sr3802p3t2pln/YemhbNHLODpkkbX6oCUyaCkCSqGZUyxfnwGgpVQ7BElopO3+mBIuHOf9llPvSsrRkF+3x32HxA+i2vw3z8t2RpDEyZ3n7PNd9CaWhW1yx47S7X1TmmmShIFV/haiEaKbiG31GgkJm3Q1t/r+kBuHQ2G203Q9CQeqOpmYfZkyhnqbEBp/KvUI/F1xXb90nDbXegfSNTuPAw+KPS7MvozjtiyfKjx2ebDmtlrit8nMHGP88h5PgHq/VXNw1M8E9XqmK84HnWDsqJNdg2PCoEgh+cJybhX3zcWS9gealwWzX4VKyngEOrKPuKfrRRKzHrBPWUZpuqEYhFovFYrFYLBaLhYw/cbYrzTVIesAAAAAASUVORK5CYII=">
+
+</body>
+
+</html>
