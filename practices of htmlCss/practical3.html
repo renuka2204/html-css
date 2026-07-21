@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food menu</title>
+    <style>
+        #bodycnt {
+            /* border: 2px solid rgb(218, 17, 17); */
+            height: 100vh;
+            width: 90%;
+            margin: auto;
+            background-color: black;
+        }
+
+        #home {
+            /* border: 2px solid red; */
+            height: 10%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .img {
+            display: flex;
+            margin-left: 50px;
+
+        }
+
+        .img img {
+            border-radius: 30px;
+
+        }
+
+        h1 {
+            color: gold;
+        }
+
+        .navbar {
+            /* border: 2px solid blue; */
+            width: 50%;
+            height: 10%;
+            display: flex;
+            margin-left: 25%;
+            justify-content: space-around;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        a:hover {
+            color: gold;
+        }
+
+        #menu {
+            /* border: 2px solid yellow; */
+            background-color: rgba(64, 38, 38, 0.325);
+            height: 16%;
+            width: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .name {
+            color: white;
+            font-size: 37px;
+            font-family: 'Times New Roman', Times, serif;
+            border-bottom: 1px solid gold;
+        }
+
+        #cardcnt {
+            /* border: 2px solid red; */
+            height: 45%;
+            display: flex;
+            /* justify-content: space-evenly; */
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            color: white;
+            /* border: 2px solid yellow; */
+            height: 92%;
+            width: 15%;
+            border-radius: 13px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            background: #222;
+            width: 185px;
+            padding: 10px;
+        }
+
+        .imgcnt {
+            border-radius: 10px;
+        }
+
+        #contact {
+            /* border: 2px solid yellow; */
+            height: 29%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: rgba(64, 38, 38, 0.325);
+
+        }
+
+        .contactcnt {
+            /* border: 2px solid red; */
+            width: 50%;
+            height: 90%;
+            margin-left: 30px;
+        }
+
+        .logo {
+            /* border: 2px solid red; */
+            width: 50%;
+            height: 90%;
+        }
+
+        .contactcnt h2 {
+            color: gold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .us a {
+            font-size: 15px;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             
+        }
+        .abhi{
+            display: flex;
+            gap: 40px;
+            border-radius: 30px;
+        }
+        .abhi img{
+            border-radius: 20px;
+        }
+
+
+
+
+
+        @media (max-width: 700px) {
+            #home {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .img {
+                margin-left: 0;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 28px;
+            }
+
+            .navbar {
+                width: 100%;
+                margin-left: 0;
+                align-items: center;
+                gap: 10px;
+                height: auto;
+            }
+
+            .navbar a {
+                font-size: 18px;
+            }
+
+            #menu {
+                height: auto;
+                padding: 20px 0px;
+            }
+
+            .img img {
+                width: 75px;
+                height: 60px;
+            }
+
+            #cardcnt {
+                width: 100%;
+                flex-wrap: wrap;
+                height: auto;
+                background-color: black;
+            }
+
+            .card {
+                width: auto;
+            }
+            #contact{
+                flex-direction: column;
+            }
+            
+            
+            .contactcnt h2{
+                color: black;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bodycnt">
+        <div id="home">
+            <div class="img">
+                <img width="70px" height="55px"
+                    src="https://static.vecteezy.com/system/resources/thumbnails/052/792/818/small/restaurant-logo-design-vector.jpg">
+            </div>
+            <h1>Foodies</h1>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+
+        <div id="menu">
+            <div>
+                <h1 class="name">Our Special Menu</h1>
+                <p>Delicious food for you</p>
+            </div>
+        </div>
+
+        <div id="cardcnt">
+            <div class="card">
+                <img width="202px" height="170px"
+                    src="https://xoxobella.com/wp-content/uploads/2024/05/Homemade-Margherita-Pizza-2.jpg">
+                <h3>Margherita Pizza</h3>
+                <h2>₹199</h2>
+                <button>Order Now</button>
+
+            </div>
+            <div class="card">
+                <img class="imgcnt" width="202px" height="160px"
+                    src="https://images.slurrp.com/prod/recipe_images/transcribe/snack/Vegetable-Burger.webp">
+                <h3>Veg Burger</h3>
+                <h2>₹149</h2>
+                <button>Order Now</button>
+
+            </div>
+            <div class="card">
+                <img class="imgcnt" width="202px" height="160px"
+                    src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/1/9/6/FNK_Spring-Vegetable-Alfredo_s4x3.jpg.rend.hgtvcom.1280.1280.suffix/1484859771784.webp">
+                <h3>Pasta Alfredo</h3>
+                <h2>₹179</h2>
+                <button>Order Now</button>
+
+            </div>
+            <div class="card">
+                <img class="imgcnt" width="202px" height="160px"
+                    src="https://cremecastle.in/cdn/shop/files/2_Choco_truffle_Pastry.jpg?v=1757072564">
+                <h3>Chocolate Cake</h3>
+                <h2>₹129</h2>
+                <button>Order Now</button>
+
+            </div>
+        </div>
+
+        <div id="contact">
+            <div class="contactcnt">
+                <h2>Contact Us</h2>
+                <nav class="us">
+                    <a href="#number">📞 91- 123456789</a><br><br>
+                    <a href="#mail">✉️ foodie@example.com</a><br><br>
+                    <a href="#location">123,Solapur,Maharashtra,India</a>
+                </nav>
+            </div>
+            <div class="logo">
+                <section class="abhi">
+                    <a href="#"><img width="40px" height="40px"
+                            src="https://i.pinimg.com/736x/83/d8/12/83d81266fddea00c645738cdbf15746e.jpg"></a>
+                    <a href="#"><img width="40px" height="40px"
+                            src="https://img.magnific.com/premium-vector/instagram-vector-logo-icon-social-media-logotype-black-white_901408-393.jpg?semt=ais_hybrid&w=740&q=80"></a>
+                    <a href="#"><img width="40px" height="40px"
+                            src="https://image.similarpng.com/file/similarpng/very-thumbnail/2021/01/Whatsapp-icon-with-black-color-on-transparent-background-PNG.png"></a>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

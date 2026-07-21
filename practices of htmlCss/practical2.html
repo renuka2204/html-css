@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            /* border: 2px solid black; */
+            height: 100vh;
+        }
+
+        #conrainercnt {
+            /* border: 2px solid black; */
+            /* border-bottom: 1px solid lightcyan; */
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: rgba(13, 13, 52, 0.905);
+        }
+
+        .navbar {
+            margin-left: 150px;
+            font-family: serif;
+            font-weight: bold;
+            font-size: 28px;
+            color: white;
+            width: 15%;
+            /* border: 2px solid red; */
+        }
+
+        li:last-child {
+            color: blue;
+        }
+
+        .navcnt {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+        a {
+            text-decoration: none;
+            font-size: large;
+            color: white;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        .get {
+            margin-right: 10px;
+            width: 20%;
+            /* border: 2px solid red; */
+            justify-content: end;
+            display: flex;
+            margin-right: 100px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: blue;
+            color: white;
+
+        }
+
+        .btn:hover {
+            background-color: aqua;
+            color: black;
+
+        }
+
+        #home {
+            /* border: 2px solid red; */
+            height: 48vh;
+            display: flex;
+            background: linear-gradient(to right, #071a3c, #0c244e, #041239);
+            color: white;
+            gap: 10px;
+
+        }
+
+        .Card {
+            /* border: 2px solid blue; */
+            height: 100%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 100px;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 48px;
+            margin-left: 35px;
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 19px;
+            margin-left: 35px;
+        }
+
+        .btncnt {
+            display: flex;
+            gap: 20px;
+        }
+
+        .start {
+            padding: 10px 25px;
+            margin-left: 40px;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 5px;
+            background-color: blue;
+            color: white;
+            font-size: 17px;
+        }
+
+        .start:hover {
+            background-color: rgba(13, 13, 52, 0.905);
+        }
+
+        .more {
+            padding: 10px 25px;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 5px;
+            background-color: rgba(13, 13, 52, 0.905);
+            color: white;
+            font-size: 17px;
+        }
+
+        .more:hover {
+            background-color: blue;
+        }
+
+        .imgecnt {
+            /* border: 2px solid blue; */
+            height: 100%;
+            width: 50%;
+            margin-left: 100px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        #about {
+            /* border: 2px solid blue; */
+            height: 30%;
+            display: flex;
+
+        }
+
+        #aboutcnt {
+            width: 50%;
+            /* border: 2px solid red; */
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .cnt {
+            margin-left: 40px;
+            margin-top: 30px;
+        }
+
+        .cnt img {
+            border-radius: 10px;
+        }
+
+        .paracnt {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .paracnt h2 {
+            color: blue;
+            font-size: 30px;
+        }
+
+        #services {
+            width: 50%;
+            /* border: 2px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .name {
+            display: flex;
+            justify-content: center;
+            /* border: 2px solid red; */
+            width: 100%;
+            height: 15%;
+        }
+
+        .name h3 {
+            margin-top: 5px;
+            font-size: 28px;
+            font-family: 'Times New Roman', Times, serif;
+            color: blue;
+        }
+
+
+        .cardcnt {
+            /* border: 2px solid red; */
+            width: 100%;
+            height: 84%;
+            display: flex;
+            gap: 20px;
+            justify-content: space-evenly;
+            margin: auto;
+
+        }
+
+        .card {
+            border: 1px solid rgb(18, 6, 6);
+            display: flex;
+            width: 25%;
+            height: 83%;
+            margin-top: 18px;
+            border-radius: 10px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+
+        }
+
+        .card p {
+            font-size: 15px;
+            margin-top: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+        }
+
+        #contact {
+            /* border: 2px solid red; */
+            height: 10%;
+            width: 100%;
+            display: flex;
+            background-color: #071a3c;
+        }
+
+        .contactcnt {
+            /* border: 2px solid black; */
+            width: 50%;
+        }
+
+        .namecnt {
+            /* border: 2px solid yellow; */
+            height: 33%;
+            width: 100%;
+            background-color: #0c244e;
+        }
+
+        .namecnt h3 {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 30px;
+            font-size: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .logo a {
+            color: white;
+            font-size: 15px;
+        }
+
+        .logocnt {
+            /* border: 2px solid black; */
+            width: 50%;
+        }
+
+        .abhi {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: end;
+            margin-right: 40px;
+            margin-top: 10px;
+        }
+
+        .footercnt {
+            /* border: 2px solid red; */
+            height: 4%;
+            width: 100%;
+            background-color: rgba(13, 13, 52, 0.905);
+        }
+
+        footer {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        @media (max-width: 700px) {
+            #conrainercnt {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .navbar {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .navcnt {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .get {
+                margin: 0;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 5px
+            }
+
+            .btn {
+                padding: 5px 15px;
+            }
+
+            #home {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            .Card {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 30px;
+                margin: 0;
+            }
+
+            p {
+                font-size: 16px;
+                margin: 5px 0;
+            }
+
+            .btncnt {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .start {
+                padding: 6px 15px;
+            }
+
+            .more {
+                padding: 6px 15px;
+            }
+
+            .imgecnt {
+                width: 100%;
+                margin: 20px 0;
+                justify-content: center;
+            }
+
+            .imgecnt img {
+                width: 100%;
+                height: auto;
+            }
+
+            #about {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+
+            #aboutcnt {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cnt {
+                margin: 0;
+            }
+
+            .cnt img {
+                width: 250px;
+                margin-bottom: 30px;
+                height: auto;
+
+            }
+
+            .paracnt {
+                margin-top: 0;
+                font-size: 3px;
+            }
+
+            #services {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .cardcnt {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                height: auto;
+            }
+
+            .card {
+                width: 90%;
+                height: auto;
+                padding: 20px;
+                margin-top: 0;
+            }
+
+            #contact {
+                flex-direction: column;
+                height: auto;
+                padding: 20px 10px;
+            }
+
+            .contactcnt,
+            .logocnt {
+                width: 100%;
+            }
+
+            .logo {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 15px;
+            }
+
+            .logo a {
+                font-size: 15px;
+            }
+
+            .abhi {
+                justify-content: center;
+                margin: 20px 0 0;
+                gap: 20px;
+            }
+
+            .footercnt {
+                height: auto;
+                padding: 10px;
+            }
+
+            footer {
+                text-align: center;
+                font-size: 14px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="conrainercnt">
+            <div class="navbar">
+                <h2>Brand.</h2>
+            </div>
+
+            <nav class="navcnt">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="get">
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+
+        <div id="home">
+            <div class="Card">
+                <h1>We Build</h1>
+                <h1>Beautiful Websites</h1><br>
+
+                <p>We are a creative team building modern</p>
+                <p>and responsive websites for your business.</p><br><br>
+
+                <div class="btncnt">
+                    <button class="start">Get Started</button>
+                    <button class="more">Learn More</button>
+                </div>
+            </div>
+            <div class="imgecnt">
+                <img width="720px" height="350px" src="../images/photo.jpeg">
+            </div>
+        </div>
+        <div id="about">
+            <div id="aboutcnt">
+                <div class="cnt">
+                    <img width="200px" height="150px" src="../images/photocnt.jpeg">
+                </div>
+                <div class="paracnt">
+                    <h2>ABOUT US</h2><br>
+                    <p>We are a team of passionate developers and designers.</p>
+                    <p> We build clean,resposive and user-friendly
+                        websites.</p>
+                </div>
+            </div>
+
+            <div id="services">
+                <div class="name">
+                    <h3>OUR SERVICES</h3>
+                </div>
+                <div class="cardcnt">
+                    <div class="card">
+                        <img width="50px" height="50px"
+                            src="https://images.icon-icons.com/1379/PNG/512/folderblue_92960.png"><br>
+                        <h2>Web Design</h2>
+                        <p>We Design beautiful and modern websites.</p>
+
+                    </div>
+                    <div class="card">
+                        <img width="50px" height="50px"
+                            src="https://cdn-icons-png.flaticon.com/512/8758/8758031.png"><br>
+                        <h2>Development</h2>
+                        <p>We build fast and responsive websits.</p>
+
+                    </div>
+                    <div class="card">
+                        <img width="50px" height="50px"
+                            src="https://cdn-icons-png.flaticon.com/512/5681/5681664.png"><br>
+                        <h3>SEO Optimization</h3>
+                        <p>We help your websites rank higher.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact">
+            <div class="contactcnt">
+                <div class="namecnt">
+                    <h3>CONTACT ME</h3>
+                </div>
+                <div class="logo">
+                    <a href="number">📞 91- 123456789</a>
+                    <a href="gamil">✉️ renukashinge@gmail.com</a>
+                    <a href="location">Solapur,Maharashtra, India</a>
+                </div>
+            </div>
+
+            <div class="logocnt">
+                <section class="abhi">
+                    <a href="https://github.com/renuka2204/html-css" target="_blank"><img width="45px" height="45px"
+                            src="https://cdn.iconscout.com/icon/free/png-256/free-github-logo-icon-svg-download-png-8630395.png?f=webp"></a>
+                    <a href="https://www.linkedin.com/in/renuka-shinge-3209152a6" target="_blank"><img width="40px"
+                            height="40px"
+                            src="https://e7.pngegg.com/pngimages/973/624/png-clipart-blue-and-white-in-logo-social-media-computer-icons-linkedin-linkedin-social-icon-miscellaneous-blue-thumbnail.png"></a>
+                    <a href="https://www.linkedin.com/in/renuka-shinge-3209152a6" target="_blank"><img width="45px"
+                            height="45px" src="https://cdn-icons-png.flaticon.com/512/6230/6230964.png"></a>
+                </section>
+
+
+            </div>
+        </div>
+
+        <div class="footercnt">
+            <footer>
+                &copy; 2026 Brand. All rights reserved.
+            </footer>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

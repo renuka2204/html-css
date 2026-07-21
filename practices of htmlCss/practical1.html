@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            border: 2px solid black;
+            height: 100vh;
+        }
+
+        #container {
+            border: 2px solid black;
+            /* background-color: aqua; */
+            border-radius: 30px;
+            height: 80vh;
+            width: 40%;
+            margin: auto;
+            margin-top: 20px;
+
+        }
+
+        .cnt {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .student-form {
+            display: grid;
+            grid-template-columns: 180px 250px;
+            gap: 20px 15px;
+            align-items: center;
+            width: 400px;
+            margin: auto;
+        }
+
+        .student-form label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .student-form input,
+        .student-form select {
+            width: 100%;
+            padding: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .gender {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .buttoncnt {
+            padding: 10px 22%;
+            font-size: larger;
+            background-color: rgb(99, 203, 238);
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .buttoncnt:hover {
+            background: #0b5ed7;
+        }
+
+        @media (max-width: 700px) {
+
+            body {
+                border: none;
+                height: auto;
+                padding: 15px;
+            }
+
+            #container {
+                width: 100%;
+                height: auto;
+                padding: 20px 15px;
+                border: none;
+            }
+
+            .student-form {
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .student-form {
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            header h2 {
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <form>
+            <header class="cnt">
+                <img width="50px" height="50px" src="https://cdn-icons-png.flaticon.com/512/46/46955.png">
+                <h2>STUDENT REGISTRATION FORM</h2>
+                <P>Fill in Details to regitrsation</P>
+            </header><br><br>
+
+            <div class="student-form">
+                <label>👤 Full Name:</label>
+                <input type="text" placeholder="Enter your full Name">
+
+                <label>✉️ Email:</label>
+                <input type="email" placeholder="Enter your Email">
+
+                <label>📞 Mobile Number:</label>
+                <input type="text" placeholder="Enter your Mobile Number">
+
+                <label>👥 Gender:</label>
+                <div class="gender">
+                    <input type="radio" name="gender"> Male
+                    <input type="radio" name="gender"> Female
+                    <input type="radio" name="gender"> Other
+                </div>
+
+                <label>📖 Course:</label>
+                <select>
+                    <option>Select your course</option>
+                    <option>BCA</option>
+                    <option>B.Sc</option>
+                    <option>B.Com</option>
+                </select>
+            </div><br><br><br>
+            <div class="btn">
+                <button class="buttoncnt" type="submit">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
