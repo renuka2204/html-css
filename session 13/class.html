@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicals</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            border: 2px solid black;
+            height: 100vh;
+        }
+
+        .button {
+            /* display: flex; */
+            align-items: center;
+            justify-self: center;
+            margin: 40px;
+            font-size: larger;
+            background-color: blue;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+
+            transition: 0.5s;
+        }
+
+        .button:hover {
+            background-color: black;
+            transform: scale(1.1);
+        }
+
+        p {
+            font-weight: bolder;
+        }
+
+        .card {
+            display: flex;
+            margin: 40px;
+            width: 250px;
+            padding: 20px;
+            border: 1px solid black;
+
+
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        a{
+            text-decoration: none;
+            margin: 10px;
+            transition: 0.3s;
+            font-size: 20px;
+            
+        }
+        a:hover{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Animated Button</p>
+        <button class="button">Enroll Now</button>
+
+    </div>
+    <br>
+    <hr>
+    <br>
+    <p>Hover Card </p>
+    <div class="card">
+        Produce card
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div>
+        <p>Navigation Hover Effect </p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+        </nav>
+    </div>
+    <br>
+    <hr>
+
+</body>
+
+</html>
+
+//Make the Hand Wave
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(15deg); }
+  30% { transform: rotate(-10deg); }
+  45% { transform: rotate(15deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+//CSS Animation
+
+.hero-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
