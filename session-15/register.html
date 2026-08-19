@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Register</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #sreencnt {
+            /* border: 3px solid black; */
+            height: 100vh;
+        }
+
+        #navbar {
+            /* border: 2px solid red; */
+            height: 9%;
+            width: 100%;
+            background-color: #2874F0;
+            display: flex;
+            gap: 55px;
+            /* justify-content: center; */
+            align-items: center;
+            position: fixed;
+            top: 0;
+        }
+
+        #iconcnt {
+            display: flex;
+            padding-left: 10%;
+            flex-direction: column;
+            padding-top: 10px;
+        }
+
+        .iconc {
+            display: flex;
+            gap: 5px;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .yellow {
+            color: gold;
+        }
+
+        .search-box {
+            height: 37px;
+            width: 600px;
+
+            background-color: white;
+
+            display: flex;
+            align-items: center;
+
+            border-radius: 2px;
+        }
+
+        .search-box input {
+            height: 100%;
+            width: 92%;
+
+            border: none;
+            outline: none;
+
+            padding: 0 15px;
+            font-size: 15px;
+        }
+
+        .serch {
+            border: none;
+            outline: none;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            color: #2874F0;
+            font-weight: bolder;
+        }
+
+        .seller {
+            white-space: nowrap;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+
+        .morecnt {
+            height: 25px;
+            width: 60px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: #2874F0;
+            font-size: 15px;
+
+        }
+
+        .cart {
+            display: flex;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            gap: 2px;
+            align-items: center;
+        }
+
+        .cart img {
+            color: white;
+        }
+        .cart a{
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+        }
+
+        #main {
+            border: 2px solid black;
+            height: 100vh;
+            width: 100%;
+            margin-top: 2%;
+            background-color: #EBF3FD;
+            padding-left: 140px;
+            display: flex;
+        }
+
+        .left-section {
+            width: 510px;
+            padding-top: 75px;
+        }
+
+        .left-section h1 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+
+        .subtitle {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 45px;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .feature p {
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: 600;
+        }
+
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            flex-shrink: 0;
+            border: 1px solid #ddd;
+        }
+
+        .feature-icon.blue {
+            color: white;
+            background: #2874f0;
+            border: 7px solid white;
+            box-shadow: 0 1px 6px #bbb;
+        }
+
+        .feature-icon.yellow {
+            color: white;
+            background: #f9b82e;
+            border: 7px solid white;
+            box-shadow: 0 1px 6px #bbb;
+        }
+
+        .feature-icon.green {
+            color: white;
+            background: #51ad55;
+            border: 7px solid white;
+            box-shadow: 0 1px 6px #bbb;
+        }
+
+        .imger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 8%;
+            margin-right: 40px;
+            box-shadow: 0px 1px 1px #bbb;
+        }
+
+        .imger img {
+            border-radius: 10px;
+        }
+
+        #right {
+            /* border: 2px solid red; */
+            height: 88vh;
+            width: 54%;
+            margin-top: 4%;
+            margin-left: 10px;
+        }
+
+        .register-card {
+            width: 700px;
+            background: white;
+            padding: 14px 55px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .register-card h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .register-subtitle {
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 23px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-group label span {
+            font-weight: normal;
+            color: #555;
+        }
+
+        .input-wrapper {
+            height: 30px;
+            border: 1px solid #bbb;
+            display: flex;
+            align-items: center;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .input-wrapper input {
+            flex: 1;
+            height: 80%;
+            border: none;
+            outline: none;
+            padding: 0 14px;
+            font-size: 15px;
+        }
+
+        .input-icon {
+            width: 50px;
+            text-align: center;
+            color: #aaa;
+            font-size: 20px;
+        }
+
+        .eye {
+            color: #999;
+            padding: 0 15px;
+        }
+
+
+        .mobile-input {
+            display: flex;
+            height: 30px;
+            border: 1px solid #bbb;
+        }
+
+        .country-code {
+            width: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #ddd;
+            font-size: 15px;
+        }
+
+        .mobile-input input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 15px;
+        }
+
+        .terms {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 8px 0 25px;
+            font-size: 15px;
+            color: #555;
+            line-height: 22px;
+        }
+
+        .terms input {
+            width: 20px;
+            height: 20px;
+            accent-color: #2874f0;
+            flex-shrink: 0;
+        }
+
+        .terms a {
+            color: #2874f0;
+            text-decoration: none;
+        }
+
+        .continue-btn {
+            width: 100%;
+            height: 30px;
+            border: none;
+            background: #ff641f;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .continue-btn:hover {
+            background: #ed591a;
+        }
+
+
+        .or {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            color: #666;
+        }
+
+        .or span {
+            flex: 1;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .or b {
+            font-size: 12px;
+        }
+
+        .google-btn {
+            width: 100%;
+            height: 30px;
+            background: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .google-btn a {
+            text-decoration: none;
+        }
+
+        .google-btn strong {
+            color: #4285f4;
+            font-size: 20px;
+        }
+
+        .login {
+            text-align: center;
+            margin-top: 15px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .login a {
+            color: #2874f0;
+            text-decoration: none;
+        }
+
+
+
+
+
+        @media (max-width: 700px) {
+            #navbar {
+                height: auto;
+                min-height: 65px;
+                gap: 10px;
+                padding: 8px 10px;
+                flex-wrap: wrap;
+                position: fixed;
+            }
+
+            #iconcnt {
+                padding-left: 0;
+                padding-top: 0;
+            }
+
+            .search-box {
+                width: 100%;
+                height: 35px;
+                order: 2;
+            }
+
+            .search-box input {
+                width: 90%;
+                font-size: 14px;
+            }
+
+            .seller,
+            .morecnt,
+            .cart {
+                font-size: 13px;
+            }
+
+            #main {
+                width: 100%;
+                min-height: 100vh;
+                height: auto;
+                margin-top: 0;
+                padding: 140px 12px 30px;
+                display: flex;
+                flex-direction: column;
+                border: none;
+            }
+
+            .left-section {
+                width: 100%;
+                padding: 15px 5px 25px;
+                margin: 0;
+
+                text-align: center;
+            }
+
+            .left-section h1 {
+                font-size: 22px;
+                line-height: 28px;
+                margin-bottom: 8px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+                line-height: 20px;
+                margin-bottom: 22px;
+            }
+
+            .features {
+                width: 100%;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                gap: 5px;
+            }
+
+            .feature {
+                width: 33.33%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                gap: 7px;
+            }
+
+            .feature-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+
+                margin: 0 auto;
+            }
+
+            .feature p {
+                font-size: 10px;
+                line-height: 14px;
+                text-align: center;
+            }
+
+            /* .imger {
+                width: 100%;
+
+                margin: 25px auto 0;
+                margin-right: 0;
+
+                box-shadow: none;
+            } */
+
+            /* .imger img {
+                width: 80%;
+                height: auto;
+
+                max-width: 300px;
+                border-radius: 8px;
+            } */
+            .imger{
+                display: none;
+            }
+            #right {
+                width: 100%;
+                height: auto;
+
+                margin: 0;
+            }
+
+            .register-card {
+                width: 100%;
+
+                padding: 20px 18px;
+
+                border-radius: 5px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            }
+
+            .register-card h2 {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .register-subtitle {
+                font-size: 13px;
+                line-height: 20px;
+                margin-bottom: 25px;
+            }
+
+            .form-group {
+                margin-bottom: 18px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+                margin-bottom: 7px;
+            }
+
+            .input-wrapper {
+                width: 100%;
+                height: 42px;
+            }
+
+            .input-wrapper input {
+                height: 100%;
+                font-size: 13px;
+                padding: 0 10px;
+            }
+
+            .input-icon {
+                width: 42px;
+                font-size: 16px;
+            }
+
+            .eye {
+                padding: 0 12px;
+            }
+
+            .mobile-input {
+                width: 100%;
+                height: 42px;
+            }
+
+            .country-code {
+                width: 58px;
+                font-size: 13px;
+            }
+
+            .mobile-input input {
+                font-size: 13px;
+                padding: 0 10px;
+            }
+
+            .terms {
+                gap: 8px;
+
+                margin: 5px 0 20px;
+
+                font-size: 12px;
+                line-height: 18px;
+            }
+
+            .terms input {
+                width: 17px;
+                height: 17px;
+            }
+
+            .continue-btn {
+                height: 42px;
+                font-size: 13px;
+            }
+
+            .or {
+                margin: 15px 0;
+                gap: 10px;
+            }
+
+            .or b {
+                font-size: 11px;
+            }
+
+            .google-btn {
+                height: 42px;
+                font-size: 12px;
+            }
+
+            .login {
+                margin-top: 15px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sreencnt">
+        <div id="navbar">
+            <div id="iconcnt">
+                <div id="icone">
+                    <img width="75px" height="21px"
+                        src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png">
+                </div>
+                <div class="iconc">
+                    <span class="white">Explore</span>
+                    <span class="yellow">Plus</span>
+                    <img width="15px" height="15px"
+                        src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png">
+                </div>
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search for products, brands and more">
+                <button class="serch"><span class="material-symbols-outlined"> search </span></button>
+            </div>
+
+            <div class="seller">Become a Seller</div>
+
+            <div>
+                <select class="morecnt">
+                    <option>More</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="cart">
+                <img width="50px" height="50px" src="https://cdn-icons-png.flaticon.com/512/5166/5166615.png">
+                <a href="#">Cart</a>
+            </div>
+        </div>
+
+        <div id="main">
+            <section class="left-section">
+
+                <h1>Looks like you're new here!</h1>
+
+                <p class="subtitle">
+                    Sign up with your mobile number to get started
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <div class="feature-icon blue">★</div>
+                        <p>Sell or buy with<br>confidence</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon yellow">◆</div>
+                        <p>Get access to<br>exclusive offers</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon green">✓</div>
+                        <p>Enjoy secure<br>shopping</p>
+                    </div>
+
+                </div>
+
+                <div class="imger">
+                    <img width="60%" height="40%" src="../images/flipkartregi.avif">
+                </div>
+            </section>
+
+            <section id="right">
+                <section class="register-card">
+
+                    <h2>Register</h2>
+                    <p class="register-subtitle">
+                        Enter your details to create your Flipkart account
+                    </p>
+
+                    <form>
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input type="text" placeholder="Enter your full name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+
+                            <div class="mobile-input">
+                                <div class="country-code">+91</div>
+
+                                <input type="tel" placeholder="Enter 10 digit mobile number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                Email Address
+                                <span>(Optional)</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+
+                                <input type="email" placeholder="Enter your email address">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+
+                                <input type="password" placeholder="Enter your password">
+
+                                <span class="eye">
+                                    <i class="fa fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="terms">
+                            <input type="checkbox" check>
+                            <span>
+                                I agree to Flipkart's
+                                <a href="#">Terms of Use</a>
+                                and
+                                <a href="#">Privacy Policy</a>
+                            </span>
+                        </div>
+
+                        <button type="submit" class="continue-btn">
+                            CONTINUE
+                        </button>
+
+                        <div class="or">
+                            <span></span>
+                            <b>OR</b>
+                            <span></span>
+                        </div>
+
+                        <button type="button" class="google-btn">
+                            <a href="https://www.google.com/"><img width="15px" height="15px"
+                                    src="../images/google.png"></a>
+                            <a href="https://www.google.com/">Continue with Google</a>
+                        </button>
+
+                        <div class="login">
+                            Already have an account?
+                            <a href="login.html">Login</a>
+                        </div>
+
+                    </form>
+
+
+                </section>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

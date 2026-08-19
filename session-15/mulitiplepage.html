@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Product Page</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kk6oTAHjG5ZTs1SqVi84quX0r9Ja_cKR1IK49pgauaTl9sKTds5gsWQ3&s=10">
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screencnt {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+        }
+
+        #navbar {
+            /* border: 2px solid red; */
+            background-color: white;
+            height: 9%;
+            width: 100%;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        #navbarcnt {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            background-color: yellow;
+            gap: 10px;
+            height: 65%;
+            width: 10%;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbarcnt img {
+            width: 70%;
+        }
+
+        .arrow {
+            border: none;
+            outline: none;
+            background-color: yellow;
+        }
+
+        .searchCnt {
+            border: 2px solid rgb(52, 198, 255);
+            background-color: white;
+            width: 48%;
+            height: 70%;
+            display: flex;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .search-box input {
+            height: 100%;
+            width: 92%;
+
+            border: none;
+            outline: none;
+
+            padding: 0 15px;
+            font-size: 15px;
+        }
+
+        .serch {
+            border: none;
+            outline: none;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            color: #2874F0;
+            font-weight: bolder;
+            margin-left: 5px;
+            size: 20px;
+        }
+
+        .searchCnt input {
+            height: 100%;
+            width: 92%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        #logincnt {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding-top: 5px;
+            display: flex;
+            border: none;
+            outline: none;
+
+        }
+
+        .morecnt {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+
+        }
+
+        .option {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+        }
+
+        .cart {
+            display: flex;
+            font-size: 18px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .cart a {
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+        }
+
+        #Maincnt {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+            margin-top: 68px;
+            display: flex;
+        }
+
+        .main {
+            /* border: 2px solid red; */
+            height: 100%;
+            width: 18%;
+            overflow-x: scroll;
+            z-index: 998;
+            position: fixed;
+            background-color: white;
+
+        }
+
+        .sidebar {
+            width: 263px;
+            flex-shrink: 0;
+            border-right: 1px solid #ddd;
+            background: white;
+        }
+
+        .filter-title {
+            padding: 10px 15px 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .filter-section {
+            padding: 17px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .filter-heading {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .category-back {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .category-active {
+            color: #2874f0;
+            font-weight: bold;
+            margin-left: 18px;
+            line-height: 1.4;
+        }
+
+        .brand-search {
+            width: 100%;
+            height: 30px;
+            border: 1px solid #ddd;
+            padding: 0 10px;
+            outline: none;
+            margin-bottom: 5px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin: 8px 0;
+            padding: 0 7px;
+            color: #333;
+
+        }
+
+        .filter-option input {
+            width: 14px;
+            height: 13px;
+        }
+
+        .show-more {
+            color: #2874f0;
+            font-weight: bold;
+            margin-top: 7px;
+            cursor: pointer;
+        }
+
+        .price-options {
+            margin-top: 10px;
+            padding-left: 10px;
+        }
+
+        .price-inputs {
+            display: flex;
+            gap: 10px;
+            margin-top: 7px;
+        }
+
+        .price-inputs input {
+            width: 50%;
+            height: 30px;
+            border: 1px solid #ddd;
+            padding: 0 8px;
+        }
+
+        .maint {
+            /* border: 2px solid red; */
+            width: 83%;
+            margin-left: 18%;
+        }
+
+        .result-title {
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .productc {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            justify-content: space-evenly;
+            align-content: flex-start;
+            row-gap: 10px;
+        }
+
+        .card {
+            /* border: 2px solid blue; */
+            height: 46%;
+            width: 23%;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding-bottom: 25px;
+            /* overflow: hidden; */
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .wishlist {
+            right: 15px;
+            top: 100px;
+            font-size: 24px;
+            color: #777;
+            /* z-index: 2; */
+            justify-content: end;
+            display: flex;
+            padding-left: 80%;
+            padding-top: 50px;
+        }
+
+        .wishlist:hover {
+            color: red;
+        }
+
+        .card img {
+            /* border: 2px solid red; */
+            /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12); */
+            height: 55%;
+            width: 70%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-info {
+            padding: 10px 30px;
+            text-align: center;
+
+        }
+
+        .product-category {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 3px;
+
+        }
+
+        .product-name {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            background: #168c32;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .reviews {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .assured {
+            color: #2874f0;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            color: #777;
+            text-decoration: line-through;
+            font-size: 13px;
+        }
+
+        .discount {
+            color: #17852a;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .delivery {
+            font-size: 12px;
+            color: #333;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .action-buttons button {
+            flex: 1;
+            height: 22px;
+            border: 1px solid black;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-cart {
+            background-color: white;
+            color: black;
+        }
+
+        .buy-now {
+            background-color: yellow;
+            color: black;
+            border: none;
+            outline: none;
+        }
+
+        .action-buttons button:hover {
+            opacity: 0.15;
+        }
+
+        #footerc {
+            /* border: 2px solid red; */
+            height: 48vh;
+            width: 100%;
+            margin-top: 4%;
+
+        }
+
+        .footer {
+            background: #172337;
+            color: #fff;
+            padding: 20px 20px 15px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 160px;
+        }
+
+        .footer-column h4 {
+            color: #878787;
+            font-size: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column p {
+            color: #fff;
+            font-size: 13px;
+            line-height: 22px;
+        }
+
+        .border-left {
+            border-left: 1px solid #454d5e;
+            padding-left: 30px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 18px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .footer hr {
+            border: none;
+            border-top: 1px solid #454d5e;
+            margin: 30px 0 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer-bottom div {
+            margin: 10px;
+        }
+
+        .footer-bottom i {
+            color: #f7c948;
+            margin-right: 8px;
+        }
+
+        .payments img {
+            height: 20px;
+
+        }
+
+        @media screen and (max-width: 700px) {
+
+            #navbar {
+                height: auto;
+                min-height: 60px;
+                width: 100%;
+                padding: 8px 10px;
+                gap: 8px;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+
+            #navbarcnt {
+                width: 75px;
+                height: 35px;
+                flex-shrink: 0;
+                gap: 2px;
+            }
+
+            #navbarcnt img {
+                width: 58px;
+            }
+
+            .arrow {
+                width: 15px;
+            }
+
+            .searchCnt {
+                width: auto;
+                flex: 1;
+                height: 35px;
+                gap: 2px;
+            }
+
+            .searchCnt input {
+                width: 80%;
+                font-size: 13px;
+                padding: 5px 5px;
+            }
+
+            .serch {
+                margin-left: 2px;
+                padding: 0 4px;
+            }
+
+            #logincnt .option {
+                display: none;
+            }
+
+            .morecnt {
+                display: none;
+            }
+
+            .cart {
+                flex-shrink: 0;
+                font-size: 18px;
+            }
+
+            .cart a {
+                display: none;
+            }
+
+            #Maincnt {
+                width: 100%;
+                height: calc(100vh - 110px);
+                margin-top: 70px;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .main {
+
+                top: 70px;
+                left: 0;
+
+                width: 32%;
+                min-width: 120px;
+                height: calc(100vh - 110px);
+
+                overflow-y: auto;
+                overflow-x: hidden;
+
+                background-color: white;
+                z-index: 998;
+                position: fixed;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: 1px solid #ddd;
+            }
+
+            .filter-title {
+                font-size: 15px;
+                padding: 10px;
+            }
+
+            .filter-section {
+                padding: 10px;
+            }
+
+            .filter-heading {
+                font-size: 11px;
+                margin-bottom: 8px;
+            }
+
+            .category-back,
+            .category-active {
+                font-size: 10px;
+            }
+
+            .category-active {
+                margin-left: 8px;
+            }
+
+            .brand-search {
+                width: 100%;
+                height: 27px;
+                padding: 0 5px;
+                font-size: 10px;
+            }
+
+            .filter-option {
+                gap: 5px;
+                padding: 0;
+                margin: 7px 0;
+                font-size: 10px;
+            }
+
+            .filter-option input {
+                width: 12px;
+                height: 12px;
+            }
+
+            .show-more {
+                font-size: 10px;
+            }
+
+            .price-options {
+                margin-top: 0;
+                padding: 8px;
+            }
+
+            .price-inputs {
+                padding: 0 8px 10px;
+                gap: 4px;
+            }
+
+            .price-inputs input {
+                width: 50%;
+                height: 27px;
+                padding: 0 4px;
+                font-size: 9px;
+            }
+
+
+
+            .maint {
+                width: 100%;
+                margin-left: 31%;
+            }
+
+
+            .result-title {
+                width: 100%;
+                font-size: 16px;
+                padding: 12px 10px;
+                background-color: white;
+            }
+
+
+            .productc {
+                width: 100%;
+                height: auto;
+                padding: 8px;
+                gap: 8px;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                align-items: stretch;
+            }
+
+            .card {
+                width: 100%;
+                height: auto;
+                min-height: 330px;
+                padding-bottom: 10px;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            .wishlist {
+                width: 100%;
+                height: 30px;
+                padding: 8px 10px 0 0;
+                justify-content: flex-end;
+                font-size: 22px;
+            }
+
+            .card img {
+                width: 85%;
+                height: 140px;
+                padding: 5px;
+                object-fit: contain;
+            }
+
+
+            .product-info {
+                width: 100%;
+                padding: 8px 8px 12px;
+                text-align: left;
+            }
+
+            .product-category {
+                font-size: 13px;
+                margin-bottom: 4px;
+            }
+
+            .product-name {
+                font-size: 12px;
+                line-height: 1.4;
+                min-height: 34px;
+                margin-bottom: 6px;
+            }
+
+
+            .rating-row {
+                gap: 4px;
+                margin-bottom: 7px;
+                flex-wrap: wrap;
+            }
+
+            .rating {
+                font-size: 10px;
+                padding: 3px 5px;
+            }
+
+            .reviews {
+                font-size: 10px;
+            }
+
+            .assured {
+                font-size: 10px;
+            }
+
+
+            .price-row {
+                gap: 5px;
+                flex-wrap: wrap;
+                margin-bottom: 5px;
+            }
+
+            .price {
+                font-size: 14px;
+            }
+
+            .old-price {
+                font-size: 10px;
+            }
+
+            .discount {
+                font-size: 10px;
+            }
+
+            .delivery {
+                font-size: 10px;
+            }
+
+            .action-buttons {
+                gap: 5px;
+                margin-top: 8px;
+            }
+
+            .action-buttons button {
+                height: 32px;
+                font-size: 10px;
+            }
+
+            #footerc {
+                width: 100%;
+                height: auto;
+                margin-top: 15px;
+                grid-column: 1 / -1;
+            }
+
+            .footer {
+                width: 100%;
+                padding: 20px 15px 15px;
+                background: #172337;
+            }
+
+            .footer-top {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px 15px;
+            }
+
+            .footer-column {
+                min-width: 0;
+                width: 100%;
+            }
+
+            .footer-column h4 {
+                color: #878787;
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+
+            .footer-column a {
+                color: white;
+                font-size: 11px;
+                line-height: 1.5;
+                margin-bottom: 7px;
+                display: block;
+            }
+
+            .footer-column p {
+                color: white;
+                font-size: 10px;
+                line-height: 18px;
+            }
+
+            .border-left {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .social-icons {
+                margin-top: 8px;
+            }
+
+            .social-icons i {
+                font-size: 13px;
+                margin-right: 10px;
+            }
+
+            .footer hr {
+                border: none;
+                border-top: 1px solid #454d5e;
+                margin: 25px 0 15px;
+            }
+
+            .footer-bottom {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 5px;
+                font-size: 11px;
+            }
+
+            .footer-bottom div {
+                margin: 5px;
+            }
+
+            .footer-bottom i {
+                color: #f7c948;
+                margin-right: 5px;
+            }
+
+            .payments {
+                width: 100%;
+                text-align: center;
+            }
+
+            .payments img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screencnt">
+        <div id="navbar">
+            <div id="navbarcnt">
+                <img
+                    src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-mp-c815b6.svg">
+                <select class="arrow">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="searchCnt">
+                <button class="serch"><span class="material-symbols-outlined"> search </span></button>
+                <input type="text" placeholder="Search for products, brands and more">
+            </div>
+
+            <div id="logincnt">
+                <a href="login.html"><img width="30px" height="30px"
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg"></a>
+                <div>
+                    <select class="option">
+                        <option>Login</option>
+                        <option>my profile</option>
+                        <option>Rewards</option>
+                        <option>Orders</option>
+                        <option>Wishlist</option>
+                        <option>Gift Cards</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <select class="morecnt">
+                    <option>More</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="cart">
+                <i class="fa fa-cart-shopping"></i>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+
+        <div id="Maincnt">
+
+            <div class="main">
+                <aside class="sidebar">
+
+                    <div class="filter-title">Filters</div>
+
+                    <div class="filter-section">
+
+                        <div class="filter-heading">CATEGORIES</div>
+
+                        <div class="category-back">‹ &nbsp; Home & Lifestyle</div>
+
+                        <div class="category-active">
+                            Trending Gadgets & Appliances
+                        </div>
+
+                    </div>
+
+
+                    <div class="filter-section">
+
+                        <div class="filter-heading">BRAND</div>
+
+                        <input class="brand-search" type="text" placeholder="Search Brand">
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            True Wireless (12)
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            Smart Watches (14)
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            Security Cameras (8)
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            Trimmers (6)
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            Induction Cooktops (7)
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            Neckband (9)
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            Tripods (7)
+                        </label>
+
+                        <div class="show-more">Show More</div>
+                    </div>
+                    <div class="price-options">
+
+                        <label class="filter-option">
+                            <input type="radio" name="price">
+                            Under ₹500
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="price">
+                            ₹500 - ₹1,000
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="price">
+                            ₹1,000 - ₹2,000
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="price">
+                            ₹2,000 - ₹3,000
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="price">
+                            Above ₹3,000
+                        </label>
+
+                    </div>
+
+                    <div class="price-inputs">
+                        <input type="text" placeholder="₹ Min">
+                        <input type="text" placeholder="₹ Max">
+                    </div>
+
+                    <!-- <div class="filter-section">
+
+                        <div class="filter-heading">OFFERS</div>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            Special Price
+                        </label>
+
+                    </div> -->
+            </div>
+
+
+            <div class="maint">
+
+                <div class="result-title">
+                    Trending Gadgets & Appliances (91 Results)
+                </div>
+
+                <div class="productc">
+
+
+                    <div class="card">
+
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/200/200/xif0q/home-security-camera/5/m/m/5-hidden-wireless-camera-night-vision-spy-camera-indoor-security-original-imahf6yfbsfhg9gs.jpeg?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Security Camera
+                            </div>
+
+                            <div class="product-name">
+                                Mi 360 Home Security Camera
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.1 ★</span>
+                                <span class="reviews">(10,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹1,799</span>
+                                <span class="old-price">₹2,499</span>
+                                <span class="discount">28% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img height="80vh"
+                            src="https://rukminim1.flixcart.com/image/360/360/xif0q/smartwatch/o/c/a/-enriched-transparent-original-imah76jszpjhp2yr.png?q=40">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Smart Watches
+                            </div>
+
+                            <div class="product-name">
+                                Noise ColorFit Pro 4
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.3 ★</span>
+                                <span class="reviews">(20,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹2,999</span>
+                                <span class="old-price">₹4,999</span>
+                                <span class="discount">40% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/400/400/xif0q/headphone/c/1/z/-enriched-transparent-original-imahjrjh6zhhfxqv.png?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                True Wireless Earbuds
+                            </div>
+
+                            <div class="product-name">
+                                realme Buds T300
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.2 ★</span>
+                                <span class="reviews">(12,334)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹1,999</span>
+                                <span class="old-price">₹2,499</span>
+                                <span class="discount">20% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/400/400/xif0q/trimmer/1/f/r/-original-imahns5hhqv9x5md.jpeg?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Trimmer
+                            </div>
+
+                            <div class="product-name">
+                                Philips BT1232/15
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.2 ★</span>
+                                <span class="reviews">(6,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹1,099</span>
+                                <span class="old-price">₹1,499</span>
+                                <span class="discount">27% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/200/200/xif0q/power-bank/l/i/7/-enriched-transparent-original-imahdthbcurxuh7a.png?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Power Back
+                            </div>
+
+                            <div class="product-name">
+                                Mi Power Bank 20000mAh
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.5 ★</span>
+                                <span class="reviews">(15,634)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹2,199</span>
+                                <span class="old-price">₹2,999</span>
+                                <span class="discount">10% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/200/200/xif0q/headphone/c/r/c/-original-imahfywknc8ggrh7.jpeg?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Wireless Headphones
+                            </div>
+
+                            <div class="product-name">
+                                boAt Rockerz 371, 40mm Driver
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.1 ★</span>
+                                <span class="reviews">(6,668)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹999</span>
+                                <span class="old-price">₹2,999</span>
+                                <span class="discount">66% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/200/200/xif0q/tripod/tripod-kit/3/e/w/wt-3130-newoutlate-original-imahgfyffzg5huhw.jpeg?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Tripods
+                            </div>
+
+                            <div class="product-name">
+                                Digitek DTR-550 LW
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.1 ★</span>
+                                <span class="reviews">(10,114)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹1,299</span>
+                                <span class="old-price">₹1,799</span>
+                                <span class="discount">10% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/200/200/xif0q/hair-straightener/f/w/7/3-in-1-hot-air-brush-for-women-one-step-dryer-volumizer-and-original-imahhxdngrgvrz2k.jpeg?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Hair Straighteners
+                            </div>
+
+                            <div class="product-name">
+                                URBANTOG 3 in 1 Hot Air
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.2 ★</span>
+                                <span class="reviews">(18,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹2,699</span>
+                                <span class="old-price">₹6,499</span>
+                                <span class="discount">61% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/400/400/kt0enww0/mobile-skin/n/k/j/precious-ip-logo-small-cloth-sticky-logo-for-all-smartphones-yes-original-imag6fjd73sd6zrn.jpeg?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Mobile Skin Stickers
+                            </div>
+
+                            <div class="product-name">
+                                Secure to Mobile
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.1 ★</span>
+                                <span class="reviews">(10,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹599</span>
+                                <span class="old-price">₹1,499</span>
+                                <span class="discount">50% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim1.flixcart.com/image/240/240/xif0q/mixer-grinder-juicer/u/i/u/-original-imahpjhdkcxdgnjf.jpeg?q=60">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Mixer Juicer Grinder
+                            </div>
+
+                            <div class="product-name">
+                                Philips HL7701
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.3 ★</span>
+                                <span class="reviews">(7,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹2,499</span>
+                                <span class="old-price">₹3,499</span>
+                                <span class="discount">29% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img
+                            src="https://rukminim2.flixcart.com/image/400/400/xif0q/speaker/i/l/q/-enriched-transparent-original-imah4ggahyyzczbw.png?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Home Theatre System
+                            </div>
+
+                            <div class="product-name">
+                                boAt Aavante Bar 2050
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.2 ★</span>
+                                <span class="reviews">(6,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹3,799</span>
+                                <span class="old-price">₹5,499</span>
+                                <span class="discount">30% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="wishlist">♡</div>
+                        <img height="85%"
+                            src="https://rukminim2.flixcart.com/image/400/400/xif0q/induction-cook-top/a/v/m/infra-lumo-neo-infra-lumo-electric-stove-cooktop-energy-original-imahp752tupgx5wh.jpeg?q=70">
+
+                        <div class="product-info">
+
+                            <div class="product-category">
+                                Induction Cooktop
+                            </div>
+
+                            <div class="product-name">
+                                Prestige PIC 16.0
+                            </div>
+
+                            <div class="rating-row">
+                                <span class="rating">4.3 ★</span>
+                                <span class="reviews">(7,834)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="price-row">
+                                <span class="price">₹2,499</span>
+                                <span class="old-price">₹3,499</span>
+                                <span class="discount">29% off</span>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-cart">Add Cart</button>
+                                <button class="buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="footerc">
+                        <footer class="footer">
+
+                            <div class="footer-top">
+
+                                <div class="footer-column">
+                                    <h4>ABOUT</h4>
+                                    <a href="#">Contact Us</a>
+                                    <a href="#">About Us</a>
+                                    <a href="#">Careers</a>
+                                    <a href="#">Flipkart Stories</a>
+                                    <a href="#">Press</a>
+                                    <a href="#">Corporate Information</a>
+                                </div>
+
+                                <div class="footer-column">
+                                    <h4>GROUP COMPANIES</h4>
+                                    <a href="#">Myntra</a>
+                                    <a href="#">Cleartrip</a>
+                                    <a href="#">Shopsy</a>
+                                </div>
+
+                                <div class="footer-column">
+                                    <h4>HELP</h4>
+                                    <a href="#">Payments</a>
+                                    <a href="#">Shipping</a>
+                                    <a href="#">Cancellation & Returns</a>
+                                    <a href="#">FAQ</a>
+                                </div>
+
+                                <div class="footer-column">
+                                    <h4>CONSUMER POLICY</h4>
+                                    <a href="#">Cancellation & Returns</a>
+                                    <a href="#">Terms Of Use</a>
+                                    <a href="#">Security</a>
+                                    <a href="#">Privacy</a>
+                                    <a href="#">Sitemap</a>
+                                    <a href="#">Grievance Redressal</a>
+                                    <a href="#">EPR Compliance</a>
+                                    <a href="#">FSSAI Food Safety Connect</a>
+                                </div>
+
+                                <div class="footer-column border-left">
+                                    <h4>Mail Us:</h4>
+                                    <p>
+                                        Flipkart Internet Private Limited,<br>
+                                        Buildings Alyssa, Begonia &<br>
+                                        Clove Embassy Tech Village,<br>
+                                        Outer Ring Road,<br>
+                                        Bengaluru, Karnataka, India
+                                    </p>
+
+                                    <h4>Social:</h4>
+
+                                    <div class="social-icons">
+                                        <i class="fab fa-facebook"></i>
+                                        <i class="fab fa-x-twitter"></i>
+                                        <i class="fab fa-youtube"></i>
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                </div>
+
+                                <div class="footer-column">
+                                    <h4>Registered Office Address:</h4>
+                                    <p>
+                                        Flipkart Internet Private Limited,<br>
+                                        Buildings Alyssa, Begonia &<br>
+                                        Clove Embassy Tech Village,<br>
+                                        Outer Ring Road,<br>
+                                        Bengaluru, Karnataka, India
+                                    </p>
+
+                                    <p>
+                                        CIN : U51109KA2012PTC066107<br>
+                                        Telephone : 044-45614700
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <hr>
+
+                            <div class="footer-bottom">
+
+                                <div><i class="fa-solid fa-store"></i> Become a Seller</div>
+
+                                <div><i class="fa-solid fa-bullhorn"></i> Advertise</div>
+
+                                <div><i class="fa-solid fa-gift"></i> Gift Cards</div>
+
+                                <div><i class="fa-solid fa-circle-question"></i> Help Center</div>
+
+                                <div>© 2007-2026 Flipkart.com</div>
+
+                                <div class="payments">
+                                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-69e7ec.svg"
+                                        alt="Payments">
+                                </div>
+
+                            </div>
+
+                        </footer>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
