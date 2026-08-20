@@ -1,0 +1,1284 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kk6oTAHjG5ZTs1SqVi84quX0r9Ja_cKR1IK49pgauaTl9sKTds5gsWQ3&s=10">
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screencnt {
+            border: 2px solid black;
+            height: 119vh;
+            width: 100%;
+        }
+
+        #navbar {
+            /* border: 2px solid red; */
+            background-color: white;
+            height: 9%;
+            width: 100%;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        #navbarcnt {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            background-color: yellow;
+            gap: 10px;
+            height: 65%;
+            width: 8%;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbarcnt img {
+            width: 80%;
+        }
+
+        /* .arrow {
+            border: none;
+            outline: none;
+            background-color: yellow;
+        } */
+
+        .searchCnt {
+            border: 2px solid rgb(52, 198, 255);
+            background-color: white;
+            width: 48%;
+            height: 70%;
+            display: flex;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .search-box input {
+            height: 100%;
+            width: 92%;
+
+            border: none;
+            outline: none;
+
+            padding: 0 15px;
+            font-size: 15px;
+        }
+
+        .serch {
+            border: none;
+            outline: none;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            color: #2874F0;
+            font-weight: bolder;
+            margin-left: 5px;
+            size: 20px;
+        }
+
+        .searchCnt input {
+            height: 100%;
+            width: 92%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        #logincnt {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding-top: 5px;
+            display: flex;
+            border: none;
+            outline: none;
+
+        }
+
+        .morecnt {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+
+        }
+
+        .option {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+        }
+
+        .cart {
+            display: flex;
+            font-size: 18px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .cart a {
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+        }
+
+        #maincnt {
+            /* border: 5px solid red; */
+            height: 100vh;
+            width: 100%;
+            margin-top: 5%;
+        }
+
+        .navcnt {
+            /* border: 2px solid black; */
+            height: 9.5%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 11px;
+            background-color: #FAFAFC;
+        }
+
+        #containar {
+            /* border: 2px solid black; */
+            height: 85%;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+
+        .paymentt {
+            /* border: 2px solid black; */
+            height: 95%;
+            width: 60%;
+            margin-top: 10px;
+            margin-left: 3%;
+
+        }
+
+        .mobilee {
+            /* border: 2px solid black; */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            height: 70%;
+            width: 38%;
+            margin-top: 15px;
+            margin-right: 3%;
+        }
+
+        .step {
+            width: 120px;
+            text-align: center;
+            color: #999;
+        }
+
+        .step a {
+            text-decoration: none;
+        }
+
+        .step a:hover {
+            color: #999;
+        }
+
+        .step .circle {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #bbb;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            font-weight: bold;
+        }
+
+        .step.completed {
+            color: #2877dc;
+        }
+
+        .step.completed .circle,
+        .step.active .circle {
+            background: #2877dc;
+            border-color: #2877dc;
+            color: white;
+        }
+
+        .step.active {
+            color: #212121;
+            font-weight: bold;
+        }
+
+        .step.circle span a {
+            color: #999;
+        }
+
+        .line {
+            width: 290px;
+            height: 2px;
+            background: #2877dc;
+            margin-top: 15px;
+        }
+
+        .name {
+            /* border: 2px solid red; */
+            height: 10%;
+            width: 100%;
+            margin-top: 1%;
+
+        }
+
+        .name h2 {
+            font-size: 18px;
+            padding: 10px 18px;
+        }
+
+        .payment-option {
+            border-top: 1px solid #2877dc;
+            border-right: 1px solid #2877dc;
+        }
+
+        .payment-header {
+            display: flex;
+            align-items: center;
+            padding: 13px 15px;
+            border-left: 4px solid #2877dc;
+        }
+
+        .payment-icon {
+            width: 42px;
+            color: #2877dc;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .payment-title {
+            flex: 1;
+        }
+
+        .payment-title strong {
+            font-size: 17px;
+        }
+
+        .payment-title p,
+        .payment-row p {
+            color: #777;
+            margin-top: 7px;
+        }
+
+        .card-brands {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .card-brands span:first-child {
+            color: #0757a9;
+        }
+
+        .card-brands .mastercard {
+            color: #d22b1f;
+        }
+
+        .arrow {
+            font-size: 24px;
+            margin-left: 25px;
+            color: #666;
+        }
+
+        .up {
+            margin-left: 22px;
+        }
+
+        .card-form {
+            border-top: 1px solid #eee;
+            padding: 20px 90px 20px 90px;
+        }
+
+        .input-full {
+            position: relative;
+        }
+
+        .input-full input,
+        .expiry input,
+        .cvv input {
+            height: 40px;
+            width: 100%;
+            border: 1px solid #ccc;
+            outline: none;
+            padding: 0 14px;
+            font-size: 14px;
+        }
+
+        .input-full span {
+            position: absolute;
+            right: 13px;
+            top: 10px;
+            color: #999;
+        }
+
+        .form-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr 225px;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .expiry,
+        .cvv {
+            position: relative;
+        }
+
+        .expiry label,
+        .cvv label {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+        }
+
+        .cvv .help {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            border: 1px solid #aaa;
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            text-align: center;
+            color: #777;
+        }
+
+        .add-card {
+            height: 38px;
+            background: #ffc800;
+            border: none;
+            color: #111;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .add-card:hover {
+            background-color: #0757a9;
+            color: white;
+        }
+
+        .row {
+            /* border: 2px solid black; */
+            height: 40%;
+            width: 100%;
+            margin-top: 1%;
+        }
+
+        .payment-row {
+            height: 53px;
+            border-top: 1px solid #e2e2e2;
+            display: flex;
+            align-items: center;
+            padding: 0 28px;
+            gap: 20px;
+        }
+
+        .payment-row>div:nth-child(2) {
+            flex: 1;
+        }
+
+        .payment-row strong {
+            font-size: 15px;
+        }
+
+        .payment-row p {
+            margin-top: 4px;
+        }
+
+        .payment-row .arrow {
+            margin-left: 0;
+        }
+
+        .payment-icon.wallet,
+        .payment-icon.bank {
+            font-size: 20px;
+        }
+
+        .cash {
+            border: 2px solid #2877dc;
+            width: 30px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .order-summary h2 {
+            padding-bottom: 20px;
+        }
+
+        .product {
+            display: flex;
+            padding: 15px 40px 28px;
+        }
+
+        .phone-image {
+            width: 58px;
+            height: 88px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            position: relative;
+            background: #dce8f7;
+            margin-right: 38px;
+        }
+
+        .phone-screen {
+            position: absolute;
+            width: 48px;
+            height: 73px;
+            left: 3px;
+            top: 6px;
+            background: linear-gradient(140deg, #d7e9ff, #5276a8);
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info p {
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .product-info span {
+            color: #777;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .product-info strong {
+            display: block;
+            font-size: 16px;
+        }
+
+        .product-info small {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .order-summary hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 0 28px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 28px 0;
+        }
+
+        .green {
+            color: #168b4c;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 28px 10px;
+            font-size: 18px;
+        }
+
+        .saving {
+            padding: 0 28px;
+            color: #777;
+        }
+
+        .saving span {
+            color: #168b4c;
+        }
+
+        .secure-box {
+            margin: 10px 12px 0;
+            padding: 17px;
+            background: #f3f7ff;
+            display: flex;
+            align-items: center;
+        }
+
+        .shield {
+            font-size: 30px;
+            color: #2877dc;
+            margin-right: 15px;
+        }
+
+        .secure-box p {
+            color: #777;
+            margin-top: 6px;
+            font-size: 13px;
+        }
+
+        .gift-card {
+            margin-top: 13px;
+            padding: 20px 25px;
+        }
+
+        .gift-card h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .gift-card h3 span {
+            color: #2877dc;
+            margin-right: 10px;
+        }
+
+        .gift-input {
+            display: flex;
+        }
+
+        .gift-input input {
+            flex: 1;
+            height: 35px;
+            border: 1px solid #ccc;
+            padding: 0 14px;
+            outline: none;
+        }
+
+        .gift-input button {
+            width: 95px;
+            margin-left: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            color: #2877dc;
+            font-weight: bold;
+        }
+
+        .gift-input button:hover {
+            background-color: #0757a9;
+            color: white;
+        }
+
+        .down {
+            /* border: 2px solid red; */
+            height: 13%;
+            width: 95%;
+            margin-left: 30px;
+        }
+
+        .footer {
+            width: 91.5%;
+            min-height: 80px;
+            margin: 0 auto 20px;
+            background: white;
+            border: 1px solid #e2e2e2;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            width: 30%;
+        }
+
+        .footer-icon {
+            width: 55px;
+            font-size: 34px;
+            color: #2877dc;
+        }
+
+        .footer-item p {
+            color: #555;
+            margin-top: 6px;
+        }
+
+        .blue {
+            color: #2877dc;
+        }
+
+
+        @media (max-width: 700px) {
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            #screencnt {
+                width: 100%;
+                height: auto;
+                border: none;
+            }
+
+            #navbar {
+                position: relative;
+                height: auto;
+                min-height: 70px;
+                width: 100%;
+                padding: 10px;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            #navbarcnt {
+                width: 90px;
+                height: 40px;
+                flex-shrink: 0;
+            }
+
+            #navbarcnt img {
+                width: 100%;
+                padding: 8px;
+            }
+
+            .searchCnt {
+                order: 3;
+                width: 100%;
+                height: 42px;
+                margin-top: 5px;
+            }
+
+            .searchCnt input {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .serch {
+                margin-left: 8px;
+            }
+
+            #logincnt {
+                margin-left: auto;
+            }
+
+            .option {
+                width: 60px;
+                font-size: 13px;
+            }
+
+            .morecnt {
+                width: 55px;
+                font-size: 13px;
+            }
+
+            .cart {
+                gap: 5px;
+            }
+
+            .cart a {
+                font-size: 14px;
+            }
+
+            #maincnt {
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+            }
+
+            .navcnt {
+                height: auto;
+                min-height: 85px;
+                width: 100%;
+                padding: 12px 5px;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            .step {
+                width: 95px;
+                min-width: 75px;
+                font-size: 12px;
+            }
+
+            .step .circle {
+                width: 27px;
+                height: 27px;
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+
+            .line {
+                width: 35px;
+                min-width: 35px;
+                margin-top: 13px;
+            }
+
+            #containar {
+                height: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .paymentt {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0 10px;
+            }
+
+            .name {
+                height: auto;
+                margin-top: 5px;
+            }
+
+            .name h2 {
+                font-size: 17px;
+                padding: 12px 5px;
+            }
+
+            .payment-option {
+                width: 100%;
+            }
+
+            .payment-header {
+                padding: 12px 10px;
+                gap: 8px;
+            }
+
+            .payment-icon {
+                width: 30px;
+                min-width: 30px;
+                font-size: 18px;
+            }
+
+            .payment-title strong {
+                font-size: 14px;
+            }
+
+            .payment-title p {
+                font-size: 11px;
+                margin-top: 4px;
+            }
+
+            .card-brands {
+                display: none;
+            }
+
+            .arrow {
+                font-size: 20px;
+                margin-left: 5px;
+            }
+
+            .up {
+                margin-left: auto;
+            }
+
+
+            .card-form {
+                padding: 15px;
+            }
+
+            .input-full input,
+            .expiry input,
+            .cvv input {
+                height: 42px;
+                font-size: 13px;
+            }
+
+            .form-bottom {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                margin-top: 15px;
+            }
+
+            .add-card {
+                grid-column: 1 / -1;
+                width: 100%;
+                height: 42px;
+            }
+
+            .row {
+                height: auto;
+                margin-top: 10px;
+            }
+
+            .payment-row {
+                min-height: 62px;
+                height: auto;
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .payment-row strong {
+                font-size: 14px;
+            }
+
+            .payment-row p {
+                font-size: 11px;
+                margin-top: 3px;
+            }
+
+            .payment-row .arrow {
+                margin-left: auto;
+            }
+
+            .mobilee {
+                width: calc(100% - 20px);
+                height: auto;
+                margin: 0 10px;
+                padding-bottom: 10px;
+            }
+
+            .mobilee>h2 {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .product {
+                padding: 12px 15px 20px;
+            }
+
+            .phone-image {
+                width: 52px;
+                height: 78px;
+                margin-right: 20px;
+            }
+
+            .phone-screen {
+                width: 42px;
+                height: 64px;
+            }
+
+            .product-info p {
+                font-size: 13px;
+            }
+
+            .product-info span {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .product-info strong {
+                font-size: 15px;
+            }
+
+            .product-info small {
+                font-size: 11px;
+            }
+
+            .price-row {
+                padding: 11px 15px 0;
+                font-size: 13px;
+            }
+
+            .order-summary hr {
+                margin: 0 15px;
+            }
+
+            .total {
+                padding: 17px 15px 8px;
+                font-size: 16px;
+            }
+
+            .saving {
+                padding: 0 15px;
+                font-size: 12px;
+            }
+
+            .secure-box {
+                margin: 12px;
+                padding: 12px;
+            }
+
+            .shield {
+                font-size: 25px;
+                margin-right: 10px;
+            }
+
+            .secure-box strong {
+                font-size: 13px;
+            }
+
+            .secure-box p {
+                font-size: 11px;
+            }
+
+            .gift-card {
+                padding: 15px;
+            }
+
+            .gift-card h3 {
+                font-size: 13px;
+            }
+
+            .gift-input input {
+                min-width: 0;
+                height: 38px;
+                font-size: 12px;
+            }
+
+            .gift-input button {
+                width: 75px;
+                margin-left: 8px;
+                font-size: 12px;
+            }
+
+            .down {
+                width: 100%;
+                height: auto;
+                margin: 15px 0 0;
+            }
+
+            .footer {
+                width: calc(100% - 20px);
+                min-height: auto;
+                margin: 0 10px 15px;
+                padding: 15px 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .footer-item {
+                width: 100%;
+            }
+
+            .footer-icon {
+                width: 45px;
+                font-size: 28px;
+                flex-shrink: 0;
+            }
+
+            .footer-item strong {
+                font-size: 12px;
+            }
+
+            .footer-item p {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screencnt">
+        <div id="navbar">
+            <div id="navbarcnt">
+                <img
+                    src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-mp-c815b6.svg">
+                <!-- <select class="arrow">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select> -->
+            </div>
+
+            <div class="searchCnt">
+                <button class="serch"><span class="material-symbols-outlined"> search </span></button>
+                <input type="text" placeholder="Search for products, brands and more">
+            </div>
+
+            <div id="logincnt">
+                <a href="login.html"><img width="30px" height="30px"
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg"></a>
+                <div>
+                    <select class="option">
+                        <option>Login</option>
+                        <option>my profile</option>
+                        <option>Rewards</option>
+                        <option>Orders</option>
+                        <option>Wishlist</option>
+                        <option>Gift Cards</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <select class="morecnt">
+                    <option>More</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="cart">
+                <i class="fa fa-cart-shopping"></i>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+
+        <div id="maincnt">
+
+            <div class="navcnt">
+                <div class="step completed">
+                    <div class="circle">✓</div>
+                    <a href="#"><span>Login</span></a>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step completed">
+                    <div class="circle">✓</div>
+                    <a href="#"><span>Address</span></a>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step active">
+                    <div class="circle">3</div>
+                    <a href="#"><span>Payment</span></a>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step">
+                    <div class="circle">4</div>
+                    <a href="#"><span>Place Order</span></a>
+                </div>
+
+            </div>
+
+
+            <div id="containar">
+
+                <div class="paymentt">
+                    <div class="name">
+                        <h2>Choose a payment option</h2>
+                    </div>
+
+                    <div class="payment-option">
+
+                        <div class="payment-header">
+                            <div class="payment-icon"> <i class="fa-solid fa-credit-card"></i></div>
+
+                            <div class="payment-title">
+                                <strong>Credit / Debit / ATM Card</strong>
+                                <p>Add and secure your card as per RBI guidelines</p>
+                            </div>
+
+                            <div class="card-brands">
+                                <span>VISA</span>
+                                <span class="mastercard">●●</span>
+                                <span>RuPay</span>
+                            </div>
+
+                            <span class="arrow up">⌃</span>
+                        </div>
+                    </div>
+
+                    <div class="card-form">
+
+                        <div class="input-full">
+                            <input type="text" placeholder="Enter card number" />
+                            <span><i class="fa-solid fa-credit-card"></i></span>
+                        </div>
+
+                        <div class="form-bottom">
+
+                            <div class="expiry">
+                                <input type="text" placeholder="MM / YY" />
+                                <label>Expiry</label>
+                            </div>
+
+                            <div class="cvv">
+                                <input type="text" placeholder="CVV" />
+                                <span class="help">?</span>
+                                <label>CVV</label>
+                            </div>
+
+                            <button class="add-card">ADD CARD</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="payment-row">
+                            <div class="payment-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                            <div>
+                                <strong>UPI</strong>
+                                <p>Pay by any UPI app</p>
+                            </div>
+                            <span class="arrow">⌄</span>
+                        </div>
+
+                        <div class="payment-row">
+                            <div class="payment-icon wallet"> <i class="fa-solid fa-wallet"></i> </div>
+                            <div>
+                                <strong>Wallets</strong>
+                                <p>PhonePe, Paytm, Flipkart Wallet and more</p>
+                            </div>
+                            <span class="arrow">⌄</span>
+                        </div>
+
+                        <div class="payment-row">
+                            <div class="payment-icon bank"> <i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <strong>Net Banking</strong>
+                                <p>Pay from your preferred Bank</p>
+                            </div>
+                            <span class="arrow">⌄</span>
+                        </div>
+
+                        <div class="payment-row">
+                            <div class="payment-icon"> <i class="fa-solid fa-calendar-days"></i></div>
+                            <div>
+                                <strong>EMI (Easy Installments)</strong>
+                                <p>Pay in easy installments</p>
+                            </div>
+                            <span class="arrow">⌄</span>
+                        </div>
+
+                        <div class="payment-row">
+                            <div class="payment-icon cash"><i class="fa-solid fa-money-bill"></i></div>
+                            <div>
+                                <strong>Cash on Delivery</strong>
+                                <p>Pay when you receive your order</p>
+                            </div>
+                            <span class="arrow right">›</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="mobilee">
+
+                    <h2>Order Summary</h2>
+
+                    <div class="product">
+
+                        <div class="phone-image">
+                            <div class="phone-screen"></div>
+                        </div>
+
+                        <div class="product-info">
+                            <p>realme narzo 70 5G (Ice Blue, 128 GB)</p>
+                            <span>6 GB RAM</span>
+                            <strong>₹13,999</strong>
+                            <small>Qty: 1</small>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="price-row">
+                        <span>Price (1 item)</span>
+                        <span>₹13,999</span>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Discount</span>
+                        <span class="green">−₹1,500</span>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Delivery Charges</span>
+                        <span class="green">FREE</span>
+                    </div>
+
+                    <hr />
+
+                    <div class="total">
+                        <strong>Total Amount</strong>
+                        <strong>₹12,499</strong>
+                    </div>
+
+                    <p class="saving">
+                        You will save <span>₹1,500</span> on this order
+                    </p>
+
+                    <div class="secure-box">
+                        <div class="shield">♢</div>
+                        <div>
+                            <strong>Safe and Secure Payments</strong>
+                            <p>Flipkart protects your card and OTP details</p>
+                        </div>
+                    </div>
+
+                    <div class="gift-card">
+                        <h3>
+                            <span>▣</span>
+                            Have a Flipkart Gift Card?
+                        </h3>
+
+                        <div class="gift-input">
+                            <input type="text" placeholder="Enter Gift Card ID" />
+                            <button>APPLY</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="down">
+
+                <footer class="footer">
+
+                    <div class="footer-item">
+                        <div class="footer-icon">♢</div>
+                        <div>
+                            <strong>Safe and Secure Payments. Easy returns.</strong>
+                            <p>100% Authentic products.</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-item">
+                        <div class="footer-icon">⟳</div>
+                        <div>
+                            <strong>13 days return policy</strong>
+                            <p class="blue">Know more</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-item">
+                        <div class="footer-icon">?</div>
+                        <div>
+                            <strong>Need help?</strong>
+                            <p>Visit the <span class="blue"><a href="#"> Help Center</a></span></p>
+                        </div>
+                    </div>
+
+                </footer>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screencnt {
+            border: 3px solid red;
+            height: 100vh;
+        }
+
+        #navbarcnt {
+            margin: 2%;
+            height: 5vh;
+            display: flex;
+            gap: 2%;
+        }
+
+        #logocnt {
+            width: 8%;
+            background-color: #FFE51F;
+            border-radius: 10px;
+        }
+
+        #menucnt {
+            /* border: 2px solid yellow; */
+            display: flex;
+            /* justify-content: space-between; */
+            height: 7vh;
+            width: 95%;
+            margin: 2%;
+            border-radius: 1px;
+            border-bottom: 1px solid black;
+            padding-bottom: 15px;
+        }
+
+        .icon {
+            /* border: 2px solid black; */
+            width: 30px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            display: flex;
+            align-items: center;
+           
+        }
+
+        .serachcnt {
+            /* border: 1px solid black; */
+            width: 60%;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            align-items: center;
+            display: flex;
+            outline: none;  
+        }
+
+        .imgcnt {
+            width: 25px;
+            height: 25px;
+            padding-left: 1px;
+        }
+
+        .wh-100 {
+            width: 100%;
+            height: 100%;
+        }
+
+        #logincnt {
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            /* border: 2px solid blue; */
+            width: 30%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #cartcnt {
+            display: flex;
+            align-items: center;
+        }
+
+        #navcat {
+            /* border-bottom: 1px solid black; */
+            height: 55px;
+            width: 95%;
+            margin: 20px;
+        }
+
+        .p {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        #bodycnt {
+            /* border: 2px solid black; */
+            height: 45%;
+            width: 95%;
+            padding-left: 3%;
+        }
+
+        @media (max-width: 700px) {}
+    </style>
+</head>
+
+<body>
+    <div id="screencnt">
+        <div id="navbarcnt">
+            <div id="logocnt">
+                <img height="28vh" width="15%"
+                    src="https://rukminim1.flixcart.com/fk-p-flap/52/44/image/d2ecfddf891a3922.png?q=90">
+                <img height="20vh" width="40%"
+                    src="https://rukminim1.flixcart.com/fk-p-flap/92/36/image/31f7e3af490c225f.png?q=90">
+            </div>
+            <div class="sarchabar">
+                <img height="30vh" src="https://rukminim1.flixcart.com/fk-p-flap/58/44/image/7ab4040af860941d.png?q=90">
+                <img height="20vh" src="https://rukminim1.flixcart.com/fk-p-flap/72/36/image/5a9ff48eef96b876.png?q=90">
+            </div>
+        </div>
+        <div id="menucnt">
+            <div class="icon">
+                <img class="" width="20" height="20"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIITynPgb9j4z5n4ogqhqy9KrmQhcclJy3VofdSfp2ng&s=10">
+            </div>
+            <div class="serachcnt">
+                <input class="wh-100" placeholder="Search of Products,Brands and More" />
+            </div>
+
+            <div class="container">
+                <div id="logincnt">
+                    <img width="30px" height="30px"
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg">
+                    <div class="option">
+                        <select>
+                            <option>Login</option>
+                            <option>my profile</option>
+                            <option>Rewards</option>
+                            <option>Orders</option>
+                            <option>Wishlist</option>
+                            <option>Gift Cards</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="morecnt">
+                    <select>
+                        <option>More</option>
+                        <option>Become a seller</option>
+                        <option>Notification settings</option>
+                        <option>24x7 Customer care</option>
+                    </select>
+                </div>
+                <div id="cartcnt">
+                    <img width="30px" height="30px"
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart_v4-6ac9a8.svg">
+                    <p>Cart</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="navcat">
+
+            <div class="p">
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/all.svg">
+                    <p>For You</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/fashion.svg">
+                    <p>Fashion</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/mobiles.svg">
+                    <p>Mobiles</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/beauty.svg">
+                    <p>Beauty</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/electronics.svg">
+                    <p>Eletronics</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/home-final.svg">
+                    <p>Home</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/tv.svg">
+                    <p>Appliance</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/toy.svg">
+                    <p>Toys</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/food.svg">
+                    <p>Food & Health</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/books.svg">
+                    <p>Books</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/sport.svg">
+                    <p>Sports & Featness</p>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/auto-acc.svg">
+                    <p>Auto accessories</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="bodycnt">
+            <img width="100%" height="80%"
+                src="https://rukminim2.flixcart.com/fk-p-flap/3200/720/image/97ceba021b5fa305.png?q=60">
+        </div>
+
+
+        <div>Footer</div>
+
+    </div>
+
+    </div>
+]
+7410101002
+
+</body>
+
+</html>

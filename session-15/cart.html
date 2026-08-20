@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kk6oTAHjG5ZTs1SqVi84quX0r9Ja_cKR1IK49pgauaTl9sKTds5gsWQ3&s=10">
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screencnt {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+        }
+
+        #navbar {
+            /* border: 2px solid red; */
+            background-color: white;
+            height: 9%;
+            width: 100%;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        #navbarcnt {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            background-color: yellow;
+            gap: 10px;
+            height: 65%;
+            width: 8%;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbarcnt img {
+            width: 80%;
+        }
+
+        /* .arrow {
+            border: none;
+            outline: none;
+            background-color: yellow;
+        } */
+
+        .searchCnt {
+            border: 2px solid rgb(52, 198, 255);
+            background-color: white;
+            width: 48%;
+            height: 70%;
+            display: flex;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .search-box input {
+            height: 100%;
+            width: 92%;
+
+            border: none;
+            outline: none;
+
+            padding: 0 15px;
+            font-size: 15px;
+        }
+
+        .serch {
+            border: none;
+            outline: none;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            color: #2874F0;
+            font-weight: bolder;
+            margin-left: 5px;
+            size: 20px;
+        }
+
+        .searchCnt input {
+            height: 100%;
+            width: 92%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        #logincnt {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding-top: 5px;
+            display: flex;
+            border: none;
+            outline: none;
+
+        }
+
+        .morecnt {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+
+        }
+
+        .option {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+        }
+
+        .cart {
+            display: flex;
+            font-size: 18px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .cart a {
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+        }
+
+        #maincnt {
+            /* border: 2px solid black; */
+            background-color: #F6F5FA;
+            height: 70vh;
+            width: 100%;
+            margin-top: 67px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+
+        }
+
+        .card {
+            /* border: 2px solid red; */
+            height: 95%;
+            width: 68%;
+            margin: auto;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+            height: 8%;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        #card2 {
+            /* border: 2px solid blue; */
+            height: 81%;
+            width: 100%;
+        }
+
+        .imges {
+            /* border: 2px solid black; */
+            height: 50%;
+            width: 100%;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+            display: flex;
+        }
+
+        .imge {
+            /* border: 2px solid blueviolet; */
+            width: 25%;
+            height: 94%;
+            margin-top: 4px;
+            margin-left: 3px;
+        }
+
+        .imge img {
+            height: 100%;
+            width: 90%;
+            padding-left: 20px;
+        }
+
+        .infomation {
+            /* border: 2px solid red; */
+            background-color: white;
+            width: 40%;
+            height: 94%;
+            margin-top: 5px;
+            margin-left: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30px;
+
+        }
+
+        .infomation p {
+            color: #777;
+        }
+
+        .inforcnt {
+            /* border: 2px solid red; */
+            background-color: white;
+            width: 25%;
+            height: 94%;
+            margin-top: 4px;
+            margin-left: 0px;
+        }
+
+        .delivery-date {
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .free {
+            color: #388e3c;
+            font-weight: bold;
+        }
+
+        .p {
+            margin-top: 20px;
+        }
+
+        .rating {
+            background: #168c32;
+            color: white;
+            width: 55px;
+            height: 30px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 15px;
+            padding-left: 5px;
+        }
+
+
+        .reviews {
+            color: #555;
+            font-size: 15px;
+            padding-left: 5px;
+        }
+
+        .assured {
+            color: #2874f0;
+            font-size: 16px;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+
+        .pricerow {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            color: #777;
+            text-decoration: line-through;
+            font-size: 13px;
+        }
+
+        .discount {
+            color: #17852a;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        #end {
+            border: 2px solid yellow;
+            height: 10%;
+            width: 100%;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25%;
+            gap: 0;
+        }
+
+        .quantity button,
+        .quantity span {
+            width: 48px;
+            height: 42px;
+            border: 1px solid #ddd;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+
+            transition: 0.2s;
+        }
+
+        .quantity button:hover {
+            background-color: lightblue;
+            transform: scale(1.1);
+        }
+
+        .quantity span {
+            font-size: 16px;
+        }
+
+
+        .actions {
+            margin-left: 10%;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .actions a {
+            font-weight: bold;
+            color: #2874f0;
+            cursor: pointer;
+        }
+
+        .secure {
+            padding: 13px;
+            color: #555;
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+        }
+
+        .recommendations {
+            margin-top: 10px;
+            padding: 15px 15px;
+
+        }
+
+        .recommendations h2 {
+            font-size: 18px;
+            padding-bottom: 20px;
+        }
+
+        .recommend-list {
+            display: grid;
+            /* display: flex; */
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .recommend-item {
+            padding: 10px 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .recommend-item:last-child {
+            border: none;
+        }
+
+        .recommend-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            float: left;
+            margin-right: 15px;
+        }
+
+        .recommend-item p {
+            min-height: 45px;
+            font-size: 14px;
+        }
+
+        .recommend-item b {
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .recommend-item del {
+            color: #888;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .recommend-item span {
+            color: #388e3c;
+            font-size: 13px;
+            margin-left: 5px;
+        }
+
+
+        .cardn {
+            /* border: 2px solid red; */
+            background-color: white;
+            height: 79%;
+            width: 35%;
+            margin-top: 13px;
+            margin-right: 20px;
+        }
+
+        .price-details {
+            padding: 25px;
+        }
+
+        .price-details h3 {
+            color: #777;
+            font-size: 16px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 17px 0;
+        }
+
+        .discount b,
+        .delivery-charge b {
+            color: #388e3c;
+        }
+
+        .price-details hr {
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 25px 0;
+        }
+
+        .order-btn {
+            width: 100%;
+            height: 45px;
+            border: none;
+            background: #ffc107;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .order-btn:hover {
+            background-color: lightblue;
+        }
+
+        .saving {
+            text-align: center;
+            color: #388e3c;
+            padding: 20px 0 5px;
+        }
+
+
+
+
+        #footerc {
+            /* border: 2px solid red; */
+            height: 48vh;
+            width: 100%;
+            margin-top: 15%;
+
+        }
+
+        .footer {
+            background: #172337;
+            color: #fff;
+            padding: 20px 40px 20px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 160px;
+        }
+
+        .footer-column h4 {
+            color: #878787;
+            font-size: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column p {
+            color: #fff;
+            font-size: 13px;
+            line-height: 22px;
+        }
+
+        .border-left {
+            border-left: 1px solid #454d5e;
+            padding-left: 30px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 18px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .footer hr {
+            border: none;
+            border-top: 1px solid #454d5e;
+            margin: 30px 0 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer-bottom div {
+            margin: 10px;
+        }
+
+        .footer-bottom i {
+            color: #f7c948;
+            margin-right: 8px;
+        }
+
+        .payments img {
+            height: 20px;
+
+        }
+
+        @media (max-width: 700px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            #screencnt {
+                width: 100%;
+                height: auto;
+            }
+
+            #navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 65px;
+                width: 100%;
+                padding: 8px 10px;
+                gap: 8px;
+                justify-content: space-between;
+                z-index: 1000;
+            }
+
+            #navbarcnt {
+                width: 70px;
+                height: 42px;
+                flex-shrink: 0;
+                gap: 2px;
+            }
+
+            #navbarcnt img {
+                width: 55px;
+            }
+
+            .arrow {
+                width: 12px;
+                font-size: 8px;
+            }
+
+            .searchCnt {
+                width: auto;
+                flex: 1;
+                height: 42px;
+                min-width: 0;
+                gap: 2px;
+            }
+
+            .searchCnt input {
+                width: 100%;
+                min-width: 0;
+                font-size: 12px;
+                padding: 0 5px;
+            }
+
+            .serch {
+                margin-left: 3px;
+                padding: 0 3px;
+            }
+
+            .serch span {
+                font-size: 20px;
+            }
+
+            #logincnt {
+                display: none;
+            }
+
+            .morecnt {
+                display: none;
+            }
+
+            .cart {
+                gap: 3px;
+                flex-shrink: 0;
+            }
+
+            .cart i {
+                font-size: 17px;
+            }
+
+            .cart a {
+                font-size: 12px;
+            }
+
+            #maincnt {
+                height: auto;
+                min-height: auto;
+                width: 100%;
+                margin-top: 65px;
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #f6f5fa;
+            }
+
+            .card {
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
+
+            .name {
+                height: 48px;
+                margin: 0;
+                padding-left: 10px;
+                background-color: white;
+            }
+
+            .name h2 {
+                font-size: 18px;
+            }
+
+            #card2 {
+                height: auto;
+                width: 100%;
+            }
+
+            .imges {
+                width: 100%;
+                height: auto;
+                min-height: 230px;
+                margin-top: 8px;
+                padding: 8px 5px;
+                background-color: white;
+                display: grid;
+
+                grid-template-columns: 85px 1fr;
+                grid-template-rows: auto auto;
+
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            }
+
+            .imge {
+                width: 85px;
+                height: 100px;
+                margin: 0;
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .imge img {
+                width: 80px;
+                height: 100px;
+                padding: 0;
+                object-fit: contain;
+            }
+
+            .infomation {
+                width: 100%;
+                height: auto;
+                min-height: 100px;
+                margin: 0;
+                padding: 3px 5px;
+                grid-column: 2;
+                grid-row: 1;
+                justify-content: flex-start;
+            }
+
+            .infomation h3 {
+                font-size: 15px;
+                margin-bottom: 3px;
+            }
+
+            .infomation p {
+                font-size: 12px;
+                line-height: 17px;
+            }
+
+            .p {
+                margin-top: 8px;
+            }
+
+            .rating {
+                width: 43px;
+                height: 22px;
+                font-size: 11px;
+                padding-left: 4px;
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .reviews {
+                font-size: 11px;
+                padding-left: 2px;
+            }
+
+            .assured {
+                font-size: 11px;
+                padding-left: 2px;
+            }
+
+            .delivery-date {
+                margin-left: 0;
+                margin-top: 8px;
+                font-size: 11px;
+                line-height: 16px;
+            }
+
+            .pricerow {
+                gap: 8px;
+                margin-top: 6px;
+                margin-bottom: 0;
+            }
+
+            .price {
+                font-size: 18px;
+            }
+
+            .old-price,
+            .discount {
+                font-size: 11px;
+            }
+
+            .inforcnt {
+                width: 100%;
+                height: auto;
+                margin: 8px 0 0;
+                padding-bottom: 5px;
+                grid-column: 1 / 3;
+                grid-row: 2;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: white;
+            }
+
+            .quantity {
+                margin: 0;
+                justify-content: flex-start;
+            }
+
+            .quantity button,
+            .quantity span {
+                width: 34px;
+                height: 32px;
+                font-size: 16px;
+            }
+
+            .quantity span {
+                font-size: 13px;
+            }
+
+            .actions {
+                margin-left: 0;
+                gap: 18px;
+                padding-right: 5px;
+            }
+
+            .actions a {
+                font-size: 12px;
+            }
+
+            .secure {
+                margin-top: 8px;
+                padding: 10px 5px;
+                font-size: 11px;
+                text-align: center;
+                background-color: white;
+            }
+
+            .recommendations {
+                margin-top: 8px;
+                padding: 12px 8px;
+                background-color: white;
+            }
+
+            .recommendations h2 {
+                font-size: 16px;
+                padding-bottom: 12px;
+            }
+
+            .recommend-list {
+                display: flex;
+                overflow-x: auto;
+                gap: 5px;
+            }
+
+            .recommend-item {
+                min-width: 150px;
+                padding: 8px;
+                border-right: 1px solid #ddd;
+            }
+
+            .recommend-item img {
+                width: 75px;
+                height: 75px;
+                float: none;
+                display: block;
+                margin: 0 auto 8px;
+            }
+
+            .recommend-item p {
+                min-height: 36px;
+                font-size: 11px;
+            }
+
+            .recommend-item b {
+                font-size: 13px;
+                margin-top: 5px;
+            }
+
+            .recommend-item del {
+                font-size: 10px;
+            }
+
+            .recommend-item span {
+                font-size: 10px;
+            }
+
+            .cardn {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                background-color: white;
+            }
+
+            .price-details {
+                padding: 15px;
+            }
+
+            .price-details h3 {
+                font-size: 14px;
+                padding-bottom: 12px;
+            }
+
+            .price-row {
+                padding: 11px 0;
+                font-size: 13px;
+            }
+
+            .total {
+                font-size: 17px;
+                padding: 15px 0;
+            }
+
+            .order-btn {
+                height: 45px;
+                font-size: 14px;
+            }
+
+            .saving {
+                font-size: 12px;
+                padding: 12px 0 3px;
+            }
+
+            #footerc {
+                height: auto;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .footer {
+                padding: 25px 15px 15px;
+            }
+
+            .footer-top {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px 15px;
+            }
+
+            .footer-column {
+                min-width: 0;
+            }
+
+            .footer-column h4 {
+                font-size: 10px;
+                margin-bottom: 10px;
+            }
+
+            .footer-column a {
+                font-size: 11px;
+                margin-bottom: 6px;
+            }
+
+            .footer-column p {
+                font-size: 10px;
+                line-height: 17px;
+            }
+
+            .border-left {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .social-icons {
+                margin-top: 7px;
+            }
+
+            .social-icons i {
+                font-size: 15px;
+                margin-right: 8px;
+            }
+
+            .footer hr {
+                margin: 20px 0 10px;
+            }
+
+            .footer-bottom {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                font-size: 10px;
+            }
+
+            .footer-bottom div {
+                margin: 4px 0;
+            }
+
+            .payments {
+                grid-column: 1 / 3;
+            }
+
+            .payments img {
+                height: 18px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screencnt">
+        <div id="navbar">
+            <div id="navbarcnt">
+                <img
+                    src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-mp-c815b6.svg">
+                <!-- <select class="arrow">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select> -->
+            </div>
+
+            <div class="searchCnt">
+                <button class="serch"><span class="material-symbols-outlined"> search </span></button>
+                <input type="text" placeholder="Search for products, brands and more">
+            </div>
+
+            <div id="logincnt">
+                <a href="login.html"><img width="30px" height="30px"
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg"></a>
+                <div>
+                    <select class="option">
+                        <option>Login</option>
+                        <option>my profile</option>
+                        <option>Rewards</option>
+                        <option>Orders</option>
+                        <option>Wishlist</option>
+                        <option>Gift Cards</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <select class="morecnt">
+                    <option>More</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="cart">
+                <i class="fa fa-cart-shopping"></i>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+
+
+        <div id="maincnt">
+            <div class="card">
+
+                <div class="name">
+                    <h2>My Cart (2)</h2>
+                </div>
+
+                <div id="card2">
+
+                    <div class="imges">
+                        <div class="imge">
+                            <img
+                                src="https://rukminim2.flixcart.com/image/380/380/xif0q/mobile/j/8/4/-enriched-transparent-original-imahjgt2gbtgheym.png?q=80">
+                        </div>
+                        <div class="infomation">
+                            <h3>OPPO Reno15 5G</h3>
+                            <P>(Twilight Blue,256 GB) 8GB RAM</P>
+                            <div class="p">
+                                <span class="rating">4.5 ★</span>
+                                <span class="reviews">(7,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="delivery-date">
+                                Delivery by <b>14 May, Wednesday</b> |
+                                <span class="free">Free</span>
+                                <del>₹40</del>
+                            </div>
+
+                            <div class="pricerow">
+                                <span class="price">₹47,999</span>
+                                <span class="old-price">₹49,999</span>
+                                <span class="discount">4% off</span>
+                            </div>
+
+                        </div>
+                        <div class="inforcnt">
+
+                            <div class="quantity">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+
+                            <div class="actions">
+                                <a>Save for later</a>
+                                <a>Remove</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="imges">
+                        <div class="imge">
+                            <img
+                                src="https://rukminim2.flixcart.com/image/380/380/xif0q/headphone/o/z/v/white-air-buds-pro-best-99-trustbaskt-original-imahm59h3yy3gdhm.jpeg?q=80">
+                        </div>
+                        <div class="infomation">
+                            <h3>GWALBROS</h3>
+                            <P>White air buds pro best -99</P>
+                            <div class="p">
+                                <span class="rating">4.1 ★</span>
+                                <span class="reviews">(2,234)</span>
+                                <span class="assured"> Assured</span>
+                            </div>
+
+                            <div class="delivery-date">
+                                Delivery by <b>1 May, Wednesday</b> |
+                                <span class="free">Free</span>
+                                <del>₹40</del>
+                            </div>
+
+                            <div class="pricerow">
+                                <span class="price">₹592</span>
+                                <span class="old-price">₹1,053</span>
+                                <span class="discount">50% off</span>
+                            </div>
+
+                        </div>
+                        <div class="inforcnt">
+                            <div class="quantity">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+
+                            <div class="actions">
+                                <a>Save for later</a>
+                                <a>Remove</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="secure">
+                    🛡️ &nbsp; Safe and Secure Payments. Easy returns. 100% Authentic products.
+                </div>
+
+
+
+                <div class="recommendations">
+
+                    <h2>You might be interested in</h2>
+
+                    <div class="recommend-list">
+
+                        <div class="recommend-item">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/b/i/9/-original-imahpjvn48ryduj7.jpeg?q=70"
+                                alt="Smart Watch">
+                            <p>Noise ColorFit Pulse 2<br>Smart Watch</p>
+                            <b>₹1,199</b>
+                            <del>₹2,499</del>
+                            <span>52% off</span>
+                        </div>
+
+                        <div class="recommend-item">
+                            <img src="https://rukminim1.flixcart.com/image/160/160/xif0q/power-bank/z/3/j/magsafe-10000-ztpb005-noise-original-imahnjbvfvkjvzkn.jpeg?q=60"
+                                alt="Power Bank">
+                            <p>Ambrane 10000mAh<br>Power Bank</p>
+                            <b>₹699</b>
+                            <del>₹1,499</del>
+                            <span>53% off</span>
+                        </div>
+
+                        <div class="recommend-item">
+                            <img src="https://rukminim1.flixcart.com/image/800/1070/xif0q/mouse/n/i/z/tc-m500-flipkart-smartbuy-enriched-transparent-original-imahbkfpaeazqdh8.png?q=80"
+                                alt="Wireless Mouse">
+                            <p>Logitech B175<br>Wireless Mouse</p>
+                            <b>₹679</b>
+                            <del>₹1,095</del>
+                            <span>38% off</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="cardn">
+
+                <aside class="price-details">
+
+                    <h3>PRICE DETAILS</h3>
+
+                    <div class="price-row">
+                        <span>Price (2 items)</span>
+                        <b>₹48,591</b>
+                    </div>
+
+                    <div class="price-row discount">
+                        <span>Discount</span>
+                        <b>- ₹2,461</b>
+                    </div>
+
+                    <div class="price-row delivery-charge">
+                        <span>Delivery Charges</span>
+                        <b>FREE</b>
+                    </div>
+
+                    <hr>
+
+                    <div class="total">
+                        <span>Total Amount</span>
+                        <b>₹48,591</b>
+                    </div>
+
+                    <button class="order-btn">PLACE ORDER</button>
+
+                    <p class="saving">
+                        🛡️ You will save ₹3,692 on this order
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+        <div id="footerc">
+            <footer class="footer">
+
+                <div class="footer-top">
+
+                    <div class="footer-column">
+                        <h4>ABOUT</h4>
+                        <a href="#">Contact Us</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Flipkart Stories</a>
+                        <a href="#">Press</a>
+                        <a href="#">Corporate Information</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>GROUP COMPANIES</h4>
+                        <a href="#">Myntra</a>
+                        <a href="#">Cleartrip</a>
+                        <a href="#">Shopsy</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>HELP</h4>
+                        <a href="#">Payments</a>
+                        <a href="#">Shipping</a>
+                        <a href="#">Cancellation & Returns</a>
+                        <a href="#">FAQ</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>CONSUMER POLICY</h4>
+                        <a href="#">Cancellation & Returns</a>
+                        <a href="#">Terms Of Use</a>
+                        <a href="#">Security</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Sitemap</a>
+                        <a href="#">Grievance Redressal</a>
+                        <a href="#">EPR Compliance</a>
+                        <a href="#">FSSAI Food Safety Connect</a>
+                    </div>
+
+                    <div class="footer-column border-left">
+                        <h4>Mail Us:</h4>
+                        <p>
+                            Flipkart Internet Private Limited,<br>
+                            Buildings Alyssa, Begonia &<br>
+                            Clove Embassy Tech Village,<br>
+                            Outer Ring Road,<br>
+                            Bengaluru, Karnataka, India
+                        </p>
+
+                        <h4>Social:</h4>
+
+                        <div class="social-icons">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-x-twitter"></i>
+                            <i class="fab fa-youtube"></i>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Registered Office Address:</h4>
+                        <p>
+                            Flipkart Internet Private Limited,<br>
+                            Buildings Alyssa, Begonia &<br>
+                            Clove Embassy Tech Village,<br>
+                            Outer Ring Road,<br>
+                            Bengaluru, Karnataka, India
+                        </p>
+
+                        <p>
+                            CIN : U51109KA2012PTC066107<br>
+                            Telephone : 044-45614700
+                        </p>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="footer-bottom">
+
+                    <div><i class="fa-solid fa-store"></i> Become a Seller</div>
+
+                    <div><i class="fa-solid fa-bullhorn"></i> Advertise</div>
+
+                    <div><i class="fa-solid fa-gift"></i> Gift Cards</div>
+
+                    <div><i class="fa-solid fa-circle-question"></i> Help Center</div>
+
+                    <div>© 2007-2026 Flipkart.com</div>
+
+                    <div class="payments">
+                        <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-69e7ec.svg"
+                            alt="Payments">
+                    </div>
+
+                </div>
+
+            </footer>
+
+
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
