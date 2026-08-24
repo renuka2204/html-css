@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Online Shopping India | Buy Mobiles,Electronics,Application,Clothing and .......</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kk6oTAHjG5ZTs1SqVi84quX0r9Ja_cKR1IK49pgauaTl9sKTds5gsWQ3&s=10">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            margin: auto;
+        }
+
+        #screencnt {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+        }
+
+        #navbar {
+            /* border: 2px solid black; */
+            height: 9%;
+            width: 90%;
+            display: flex;
+            margin-left: 5%;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            text-align: center;
+            background-color: white;
+        }
+
+        #logocnt {
+            /* border: 2px solid red; */
+            height: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            gap: 13px;
+            width: 12%;
+            background-color: #FFE51F;
+            border-radius: 10px;
+            height: 65%;
+
+        }
+
+        #logocn {
+            /* border: 2px solid red; */
+            width: 17%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: white;
+        }
+
+        #location {
+            /* border: 2px solid red; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+
+        #menucnt {
+            /* border: 2px solid red; */
+            height: 75px;
+            width: 90%;
+            margin-left: 5%;
+            display: flex;
+            align-items: center;
+            gap: 9%;
+            border-bottom: 1px solid black;
+            position: fixed;
+            top: 63px;
+            background-color: white;
+
+        }
+
+        .card {
+            /* border: 2px solid yellow; */
+            height: 45px;
+            width: 85%;
+        }
+
+        .cardcnt {
+            /* border: 2px solid yellow; */
+            height: 60%;
+            display: flex;
+            width: 40%;
+            justify-content: space-around;
+        }
+
+        .card2 {
+            /* border: 2px solid yellow; */
+            height: 40px;
+            width: 30%;
+        }
+
+        .card3 {
+            /* border: 2px solid yellow; */
+            height: 40px;
+            width: 30%;
+        }
+
+        .card4 {
+            /* border: 2px solid yellow; */
+            height: 40px;
+            width: 30%;
+        }
+
+        #searchCnt {
+            border: 2px solid rgb(52, 198, 255);
+            /* width: 100%; */
+            height: 95%;
+            display: flex;
+            border-radius: 7px;
+            border-radius: 7px;
+        }
+
+        #seaCnt {
+            /* border: 2px solid yellow; */
+            width: 100%;
+            padding-top: 8px;
+        }
+
+        #seaCnt input {
+            padding-left: 5px;
+            width: 100%;
+            font-size: 17px;
+            border: none;
+            outline: none;
+        }
+
+        #subCnt {
+            width: 5%;
+            /* background-color: #febd6a; */
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logincnt {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            padding-top: 5px;
+        }
+
+        .hiden {
+            display: flex;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .option a {
+            text-decoration: none;
+        }
+
+        .hidecnt {
+            display: flex;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        #morecnt {
+            display: flex;
+            align-items: center;
+            padding-top: 13px;
+            justify-content: center;
+            background-color: white;
+        }
+
+        #morecnt a {
+            text-decoration: none;
+        }
+
+        #cartcnt {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-top: 6px;
+            background-color: white;
+        }
+
+        #cartcnt a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #navcat {
+            border-bottom: 1px solid black;
+            height: 60px;
+            width: 90%;
+            margin-left: 5%;
+            position: fixed;
+            top: 138px;
+            background-color: white;
+
+
+        }
+
+        .p {
+            display: flex;
+            padding-left: 1%;
+            gap: 38px;
+        }
+
+        .p img {
+            display: flex;
+            justify-content: center;
+        }
+
+        .p a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: brown;
+        }
+
+        /* #imge {
+            border: 2px solid red;
+            margin-top: 12%;
+        } */
+
+        #bodycnt {
+            border: 1px solid black;
+            height: 100vh;
+            width: 100%;
+            margin-top: 9.8%;
+        }
+
+
+
+        .section {
+            border: 2px solid black;
+            height: 100vh;
+            width: 90%;
+            margin: auto;
+        }
+
+        .cardd {
+            display: flex;
+            height: 35vh;
+            width: 100%;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            border: 2px solid yellow;
+
+        }
+
+        .cardi {
+            height: 100%;
+            width: 30%;
+            /* border: 2px solid red; */
+        }
+        .cardi img{
+            /* height: 100%; */
+            width: 100%;
+        }
+        .multiple{
+            /* border: 2px solid black; */
+            height: 20%;
+            display: flex;
+            gap: 30px;
+            margin-top: 2%;
+        }
+        .photo{
+            border: 2px solid blue;
+            height: 95%;
+            width: 25%;
+        }
+        .photo p{
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+
+        .footer {
+            background: #212121;
+            color: #fff;
+            padding: 20px 40px 20px;
+            margin-top: 5%;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 160px;
+        }
+
+        .footer-column h4 {
+            color: #878787;
+            font-size: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column p {
+            color: #fff;
+            font-size: 13px;
+            line-height: 22px;
+        }
+
+        .border-left {
+            border-left: 1px solid #454d5e;
+            padding-left: 30px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 18px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .footer hr {
+            border: none;
+            border-top: 1px solid #454d5e;
+            margin: 30px 0 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer-bottom div {
+            margin: 10px;
+        }
+
+        .footer-bottom i {
+            color: #f7c948;
+            margin-right: 8px;
+        }
+
+        .payments img {
+            height: 20px;
+
+        }
+
+        @media (max-width: 700px) {
+            body {
+                width: 100%;
+                margin: 0;
+                /* overflow-x: hidden; */
+            }
+
+            #navbar {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                background-color: white;
+                /* z-index: 1000; */
+
+            }
+
+            #logocnt {
+                width: 110px;
+                min-width: 75px;
+                height: 40px;
+                border-radius: 8px;
+                left: 0;
+                gap: 10px;
+            }
+
+            #logocn {
+                width: auto;
+                height: 100%;
+            }
+
+            #location {
+                width: auto;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            #menucnt {
+                width: 100%;
+                height: 55px;
+                top: 60px;
+                left: 0;
+                padding: 7px 10px;
+                display: flex;
+                align-items: center;
+                background-color: white;
+                z-index: 999;
+            }
+
+            .card {
+                width: 100%;
+                height: 42px;
+            }
+
+            .cardcnt {
+                width: 100%;
+                height: 100%;
+            }
+
+            .card2 {
+                width: 100%;
+                height: 42px;
+                padding-left: 45%;
+            }
+
+            .card3 {
+                display: none;
+            }
+
+            .card4 p {
+                display: none;
+            }
+
+            #searchCnt {
+                width: 155%;
+                height: 42px;
+            }
+
+            #seaCnt {
+                width: 100%;
+                padding-top: 9px;
+                height: 20px;
+            }
+
+            #seaCnt input {
+                width: 100%;
+                font-size: 15px;
+            }
+
+            #subCnt {
+                width: 10px;
+                min-width: 25px;
+            }
+
+            .hiden {
+                display: none;
+            }
+
+            #location {
+                display: none;
+            }
+
+            #navcat {
+                width: 100%;
+                height: 55px;
+                top: 115px;
+                left: 0;
+                background-color: white;
+                overflow-x: auto;
+                overflow-y: hidden;
+                z-index: 998;
+            }
+
+            .p {
+                width: max-content;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 0 15px;
+                white-space: nowrap;
+            }
+
+            .p img {
+                width: 35px;
+                height: 35px;
+                object-fit: contain;
+            }
+
+            .p a {
+                font-size: 14px;
+            }
+
+            #screencnt {
+                width: 100%;
+                height: auto;
+                padding-top: 175px;
+            }
+
+            #imge {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            #imge img {
+                margin-bottom: 50px;
+                width: 100%;
+                height: 100%;
+            }
+
+            #bodycnt {
+                height: auto;
+                border: none;
+            }
+
+
+
+
+
+            .footer {
+                width: 100%;
+                padding: 25px 15px 15px;
+            }
+
+            .footer-top {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px 15px;
+            }
+
+            .footer-column {
+                min-width: 0;
+                width: 100%;
+            }
+
+            .footer-column h4 {
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+
+            .footer-column a {
+                font-size: 12px;
+                margin-bottom: 7px;
+            }
+
+            .footer-column p {
+                font-size: 12px;
+                line-height: 19px;
+            }
+
+            .border-left {
+                border-left: none;
+                border-top: 1px solid #454d5e;
+                padding-left: 0;
+                padding-top: 20px;
+            }
+
+            .social-icons {
+                margin-top: 10px;
+            }
+
+            .social-icons i {
+                font-size: 17px;
+                margin-right: 12px;
+            }
+
+
+            .footer hr {
+                margin: 25px 0 15px;
+            }
+
+
+            .footer-bottom {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: 12px;
+            }
+
+            .footer-bottom div {
+                margin: 6px 0;
+                width: 100%;
+            }
+
+            .payments {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .payments img {
+                height: 18px;
+                width: auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screencnt">
+        <div id="navbar">
+            <div id="logocnt">
+                <img height="28vh" src="https://rukminim1.flixcart.com/fk-p-flap/52/44/image/d2ecfddf891a3922.png?q=90">
+                <img height="21vh" src="https://rukminim1.flixcart.com/fk-p-flap/92/36/image/31f7e3af490c225f.png?q=90">
+            </div>
+            <div id="logocn">
+                <img height="30vh" src="https://rukminim1.flixcart.com/fk-p-flap/58/44/image/7ab4040af860941d.png?q=90">
+                <img height="22vh" src="https://rukminim1.flixcart.com/fk-p-flap/72/36/image/5a9ff48eef96b876.png?q=90">
+
+            </div>
+            <div id="location">3
+                location
+
+            </div>
+        </div><br><br>
+
+        <div id="menucnt">
+            <div class="card">
+                <div id="searchCnt">
+                    <div id="subCnt">
+                        <span class="material-symbols-outlined"> search </span>
+                    </div>
+                    <div id="seaCnt">
+                        <input class="wh-100" placeholder="Search For Producat, Brands and More" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="cardcnt">
+
+                <div class="card2">
+                    <div id="logincnt">
+                        <a href="login.html"><img width="30px" height="30px"
+                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg"></a>
+                        <div class="option">
+                            <a href="login.html"><select class="hiden"></a>
+                            <option>Login</option>
+                            <!-- <option>my profile</option> -->
+                            <!-- <option>Rewards</option>
+                                <option>Orders</option>
+                                <option>Wishlist</option>
+                                <option>Gift Cards</option> -->
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card3">
+                    <div id="morecnt">
+                        <a href="#"><select class="hidecnt"></a>
+                        <option>More</option>
+                        <!-- <option>Become a seller</option>
+                            <option>Notification settings</option>
+                            <option>24x7 Customer care</option> -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card4">
+                    <div id="cartcnt">
+                        <a href="cart.html"><img width="30px" height="30px"
+                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart_v4-6ac9a8.svg"></a>
+                        <a href="cart.html">
+                            <p class="hide">Cart</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div id="navcat">
+
+            <div class="p">
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/all.svg">
+                    <a href="../session-15/myProject.html">
+                        <p>For You</p>
+                    </a>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/fashion.svg">
+                    <a href="#">
+                        <p>Fashion</p>
+                    </a>
+                </div>
+                <div class="hide">
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/mobiles.svg">
+                    <a href="#">
+                        <p>Mobiles</p>
+                    </a>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/beauty.svg">
+                    <a href="#">
+                        <p>Beauty</p>
+                    </a>
+                </div>
+                <div class="hide">
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/electronics.svg">
+                    <a href="#">
+                        <p>Eletronics</p>
+                    </a>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/home-final.svg">
+                    <a href="#">
+                        <p>Home</p>
+                    </a>
+                </div>
+                <div class="hide">
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/tv.svg">
+                    <a href="#">
+                        <p>Appliance</p>
+                    </a>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/toy.svg">
+                    <a href="#">
+                        <p>Toys</p>
+                    </a>
+                </div>
+                <div class="hide">
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/food.svg">
+                    <a href="#">
+                        <p>Food & Health</p>
+                    </a>
+                </div>
+                <div>
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/books.svg">
+                    <a href="#">
+                        <p>Books</p>
+                    </a>
+                </div>
+                <div class="hide">
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/sport.svg">
+                    <a href="#">
+                        <p>Sports & Featness</p>
+                    </a>
+                </div>
+                <div class="hide">
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/auto-acc.svg">
+                    <a href="#">
+                        <p>Auto accessories</p>
+                    </a>
+                </div>
+                <div class="hide">
+                    <img width="30" height="30"
+                        src="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/furniture.svg">
+                    <a href="#">
+                        <p>Furniture</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="imge">
+            <img width="100%" height="100%"
+                src="https://rukminim2.flixcart.com/fk-p-flap/3200/720/image/6015c703748e7a42.jpg?q=60">
+        </div> -->
+
+        <div id="bodycnt">
+            <div>
+
+                <div class="section">
+
+                    <div class="cardd">
+
+                        <div class="cardi">
+                            <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/1000/image/9581d45504f3d40d.jpg?q=80" alt="">
+
+                        </div>
+                        <div class="cardi">
+                             <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/1000/image/963a3bbfa291b4f8.jpg?q=80" alt="">
+                        </div>
+                        <div class="cardi">
+                             <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/1000/image/bd5f78682f361639.jpg?q=80" alt="">
+                        </div>
+
+                    </div>
+
+                    <div class="multiple">
+
+                        <div class="photo">
+                            <img width="100%" src="https://rukminim2.flixcart.com/fk-p-flap/196/196/image/3311cf419828451f.jpg?q=90">
+                            <p>abhi</p>
+                        </div>
+                        <div class="photo">
+                            <img width="100%" src="https://rukminim2.flixcart.com/fk-p-flap/196/196/image/a89413f14ded01ce.jpg?q=90">
+                            <p>abhi</p>
+                        </div>
+                        <div class="photo">
+                            <img width="100%" src="">
+                            <p>abhi</p>
+                        </div>
+                        <div class="photo">
+                            <img width="100%" src="">
+                            <p>abhi</p>
+                        </div>
+                        <div class="photo">
+                            <img width="100%" src="">
+                            <p>abhi</p>
+                        </div>
+                        <div class="photo">
+                            <img width="100%" src="">
+                            <p>abhi</p>
+                        </div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                       
+                    </div>
+                    <div class="multiple">
+
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                       
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <footer class="footer">
+
+            <div class="footer-top">
+
+                <div class="footer-column">
+                    <h4>ABOUT</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Flipkart Stories</a>
+                    <a href="#">Press</a>
+                    <a href="#">Corporate Information</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>GROUP COMPANIES</h4>
+                    <a href="#">Myntra</a>
+                    <a href="#">Cleartrip</a>
+                    <a href="#">Shopsy</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>HELP</h4>
+                    <a href="#">Payments</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Cancellation & Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>CONSUMER POLICY</h4>
+                    <a href="#">Cancellation & Returns</a>
+                    <a href="#">Terms Of Use</a>
+                    <a href="#">Security</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">Grievance Redressal</a>
+                    <a href="#">EPR Compliance</a>
+                    <a href="#">FSSAI Food Safety Connect</a>
+                </div>
+
+                <div class="footer-column border-left">
+                    <h4>Mail Us:</h4>
+                    <p>
+                        Flipkart Internet Private Limited,<br>
+                        Buildings Alyssa, Begonia &<br>
+                        Clove Embassy Tech Village,<br>
+                        Outer Ring Road,<br>
+                        Bengaluru, Karnataka, India
+                    </p>
+
+                    <h4>Social:</h4>
+
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Registered Office Address:</h4>
+                    <p>
+                        Flipkart Internet Private Limited,<br>
+                        Buildings Alyssa, Begonia &<br>
+                        Clove Embassy Tech Village,<br>
+                        Outer Ring Road,<br>
+                        Bengaluru, Karnataka, India
+                    </p>
+
+                    <p>
+                        CIN : U51109KA2012PTC066107<br>
+                        Telephone : 044-45614700
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+
+                <div><i class="fa-solid fa-store"></i> Become a Seller</div>
+
+                <div><i class="fa-solid fa-bullhorn"></i> Advertise</div>
+
+                <div><i class="fa-solid fa-gift"></i> Gift Cards</div>
+
+                <div><i class="fa-solid fa-circle-question"></i> Help Center</div>
+
+                <div>© 2007-2026 Flipkart.com</div>
+
+                <div class="payments">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-69e7ec.svg"
+                        alt="Payments">
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+
+</body>
+
+</html>
