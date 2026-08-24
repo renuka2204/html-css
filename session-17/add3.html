@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Product Page</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kk6oTAHjG5ZTs1SqVi84quX0r9Ja_cKR1IK49pgauaTl9sKTds5gsWQ3&s=10">
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screencnt {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+            background-color: #F0F2F5;
+        }
+
+        #navbar {
+            /* border: 2px solid red; */
+            background-color: white;
+            height: 9%;
+            width: 100%;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        #navbarcnt {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            background-color: yellow;
+            gap: 10px;
+            height: 65%;
+            width: 10%;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbarcnt img {
+            width: 70%;
+        }
+
+        .arrow {
+            border: none;
+            outline: none;
+            background-color: yellow;
+        }
+
+        .searchCnt {
+            border: 2px solid rgb(52, 198, 255);
+            background-color: white;
+            width: 48%;
+            height: 70%;
+            display: flex;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .search-box input {
+            height: 100%;
+            width: 92%;
+
+            border: none;
+            outline: none;
+
+            padding: 0 15px;
+            font-size: 15px;
+        }
+
+        .serch {
+            border: none;
+            outline: none;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            color: #2874F0;
+            font-weight: bolder;
+            margin-left: 5px;
+            size: 20px;
+        }
+
+        .searchCnt input {
+            height: 100%;
+            width: 92%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        #logincnt {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding-top: 5px;
+            display: flex;
+            border: none;
+            outline: none;
+
+        }
+
+        .morecnt {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+
+        }
+
+        .option {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+        }
+
+        .cart {
+            display: flex;
+            font-size: 18px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .cart a {
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+        }
+
+        #main {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+            margin-top: 4.5%;
+        }
+
+        .photo {
+            /* border: 2px solid red; */
+            height: 100vh;
+            width: 90%;
+            margin: auto;
+        }
+
+        .card {
+            /* border: 2px solid blue; */
+            height: 90vh;
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .card img {
+            height: 100%;
+            width: 100%;
+        }
+
+
+
+        #footerc {
+            /* border: 2px solid red; */
+            height: 48vh;
+            width: 100%;
+            margin-top: 775%;
+
+        }
+
+        .footer {
+            background: #172337;
+            color: #fff;
+            padding: 20px 40px 20px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 160px;
+        }
+
+        .footer-column h4 {
+            color: #878787;
+            font-size: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column p {
+            color: #fff;
+            font-size: 13px;
+            line-height: 22px;
+        }
+
+        .border-left {
+            border-left: 1px solid #454d5e;
+            padding-left: 30px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 18px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .footer hr {
+            border: none;
+            border-top: 1px solid #454d5e;
+            margin: 30px 0 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer-bottom div {
+            margin: 10px;
+        }
+
+        .footer-bottom i {
+            color: #f7c948;
+            margin-right: 8px;
+        }
+
+        .payments img {
+            height: 20px;
+
+        }
+
+
+
+        .buy-buttons a {
+            text-decoration: none;
+        }
+
+
+
+        @media screen and (max-width: 700px) {
+
+            #navbar {
+                height: 60px;
+                min-height: 60px;
+                width: 100%;
+                padding: 8px 8px;
+                gap: 7px;
+                justify-content: space-between;
+                z-index: 9999;
+            }
+
+            #navbarcnt {
+                width: 70px;
+                height: 34px;
+                flex-shrink: 0;
+                gap: 2px;
+                border-radius: 6px;
+            }
+
+            #navbarcnt img {
+                width: 54px;
+            }
+
+            .arrow {
+                width: 13px;
+                height: 25px;
+            }
+
+            .searchCnt {
+                width: auto;
+                flex: 1;
+                min-width: 0;
+                height: 35px;
+                gap: 2px;
+                border-radius: 7px;
+            }
+
+            .searchCnt input {
+                width: 82%;
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            .serch {
+                margin-left: 2px;
+                padding: 0 3px;
+                flex-shrink: 0;
+            }
+
+            .serch span {
+                font-size: 19px;
+            }
+
+            #logincnt {
+                flex-shrink: 0;
+                padding-top: 0;
+            }
+
+            #logincnt img {
+                width: 27px;
+                height: 27px;
+            }
+
+            #logincnt .option {
+                display: none;
+            }
+
+            .morecnt {
+                display: none;
+            }
+
+            .cart {
+                flex-shrink: 0;
+                font-size: 17px;
+            }
+
+            .cart a {
+                display: none;
+            }
+
+            #screencnt {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            #main {
+                width: 100%;
+                height: auto;
+                margin-top: 60px;
+            }
+
+            .photo {
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
+
+            .card {
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
+
+            .card img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            #footerc {
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+            }
+
+            .footer {
+                width: 100%;
+                padding: 25px 15px 15px;
+            }
+
+            .footer-top {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 25px 15px;
+            }
+
+            .footer-column {
+                min-width: 0;
+            }
+
+            .footer-column h4 {
+                font-size: 10px;
+                margin-bottom: 10px;
+            }
+
+            .footer-column a {
+                font-size: 10px;
+                margin-bottom: 6px;
+            }
+
+            .footer-column p {
+                font-size: 10px;
+                line-height: 17px;
+            }
+
+            .border-left {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .social-icons {
+                margin-top: 7px;
+            }
+
+            .social-icons i {
+                font-size: 15px;
+                margin-right: 8px;
+            }
+
+            .footer hr {
+                margin: 20px 0 10px;
+            }
+
+            .footer-bottom {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 5px;
+                font-size: 10px;
+            }
+
+            .footer-bottom div {
+                margin: 5px;
+            }
+
+            .payments {
+                grid-column: 1 / -1;
+            }
+
+            .payments img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screencnt">
+        <div id="navbar">
+            <div id="navbarcnt">
+                <img
+                    src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-mp-c815b6.svg">
+                <select class="arrow">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="searchCnt">
+                <button class="serch"><span class="material-symbols-outlined"> search </span></button>
+                <input type="text" placeholder="Search for products, brands and more">
+            </div>
+
+            <div id="logincnt">
+                <a href="login.html"><img width="30px" height="30px"
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg"></a>
+                <div>
+                    <select class="option">
+                        <option>Login</option>
+                        <option>my profile</option>
+                        <option>Rewards</option>
+                        <option>Orders</option>
+                        <option>Wishlist</option>
+                        <option>Gift Cards</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <select class="morecnt">
+                    <option>More</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="cart">
+                <i class="fa fa-cart-shopping"></i>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+
+        <div id="main">
+
+            <div class="photo">
+
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/2ad16d9b34157fa8.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/18f58070cf131b30.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/af9b32e9bcfd0c4b.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/6030fa5b006371af.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/e5dd162b0e680fa9.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/4c4e8d257b8a67b4.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/cff01a8f5b26c520.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/9b1d9193c6543f6f.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/29b4515a063a0ac0.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/500/500/image/66af0b431462241b.png?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/500/500/image/8f2f3e8823680dab.png?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/500/500/image/6299af144a073c5b.png?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/500/500/image/29a50aa63c3337cc.png?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/e1d40a3330b1dcca.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/f2ba1e5c6378b1c3.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/0d04b0287a2fef1e.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/4ae56d6fe2945eb2.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/fb99789e352d460a.jpg?q=90">
+                </div>
+                <div class="card">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/2400/2000/image/d94a303ed0631a40.jpg?q=90">
+                </div>
+            </div>
+
+
+
+
+            <div id="footerc">
+                <footer class="footer">
+
+                    <div class="footer-top">
+
+                        <div class="footer-column">
+                            <h4>ABOUT</h4>
+                            <a href="#">Contact Us</a>
+                            <a href="#">About Us</a>
+                            <a href="#">Careers</a>
+                            <a href="#">Flipkart Stories</a>
+                            <a href="#">Press</a>
+                            <a href="#">Corporate Information</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>GROUP COMPANIES</h4>
+                            <a href="#">Myntra</a>
+                            <a href="#">Cleartrip</a>
+                            <a href="#">Shopsy</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>HELP</h4>
+                            <a href="#">Payments</a>
+                            <a href="#">Shipping</a>
+                            <a href="#">Cancellation & Returns</a>
+                            <a href="#">FAQ</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>CONSUMER POLICY</h4>
+                            <a href="#">Cancellation & Returns</a>
+                            <a href="#">Terms Of Use</a>
+                            <a href="#">Security</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Sitemap</a>
+                            <a href="#">Grievance Redressal</a>
+                            <a href="#">EPR Compliance</a>
+                            <a href="#">FSSAI Food Safety Connect</a>
+                        </div>
+
+                        <div class="footer-column border-left">
+                            <h4>Mail Us:</h4>
+                            <p>
+                                Flipkart Internet Private Limited,<br>
+                                Buildings Alyssa, Begonia &<br>
+                                Clove Embassy Tech Village,<br>
+                                Outer Ring Road,<br>
+                                Bengaluru, Karnataka, India
+                            </p>
+
+                            <h4>Social:</h4>
+
+                            <div class="social-icons">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-x-twitter"></i>
+                                <i class="fab fa-youtube"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>Registered Office Address:</h4>
+                            <p>
+                                Flipkart Internet Private Limited,<br>
+                                Buildings Alyssa, Begonia &<br>
+                                Clove Embassy Tech Village,<br>
+                                Outer Ring Road,<br>
+                                Bengaluru, Karnataka, India
+                            </p>
+
+                            <p>
+                                CIN : U51109KA2012PTC066107<br>
+                                Telephone : 044-45614700
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="footer-bottom">
+
+                        <div><i class="fa-solid fa-store"></i> Become a Seller</div>
+
+                        <div><i class="fa-solid fa-bullhorn"></i> Advertise</div>
+
+                        <div><i class="fa-solid fa-gift"></i> Gift Cards</div>
+
+                        <div><i class="fa-solid fa-circle-question"></i> Help Center</div>
+
+                        <div>© 2007-2026 Flipkart.com</div>
+
+                        <div class="payments">
+                            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-69e7ec.svg"
+                                alt="Payments">
+                        </div>
+
+                    </div>
+
+                </footer>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+</body>
+
+</html>

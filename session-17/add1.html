@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Product Page</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kk6oTAHjG5ZTs1SqVi84quX0r9Ja_cKR1IK49pgauaTl9sKTds5gsWQ3&s=10">
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screencnt {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+            background-color: #F0F2F5;
+        }
+
+        #navbar {
+            /* border: 2px solid red; */
+            background-color: white;
+            height: 9%;
+            width: 100%;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        #navbarcnt {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            background-color: yellow;
+            gap: 10px;
+            height: 65%;
+            width: 10%;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbarcnt img {
+            width: 70%;
+        }
+
+        .arrow {
+            border: none;
+            outline: none;
+            background-color: yellow;
+        }
+
+        .searchCnt {
+            border: 2px solid rgb(52, 198, 255);
+            background-color: white;
+            width: 48%;
+            height: 70%;
+            display: flex;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .search-box input {
+            height: 100%;
+            width: 92%;
+
+            border: none;
+            outline: none;
+
+            padding: 0 15px;
+            font-size: 15px;
+        }
+
+        .serch {
+            border: none;
+            outline: none;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            color: #2874F0;
+            font-weight: bolder;
+            margin-left: 5px;
+            size: 20px;
+        }
+
+        .searchCnt input {
+            height: 100%;
+            width: 92%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        #logincnt {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding-top: 5px;
+            display: flex;
+            border: none;
+            outline: none;
+
+        }
+
+        .morecnt {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+
+        }
+
+        .option {
+            height: 25px;
+            width: 60px;
+            border: none;
+            outline: none;
+            background-color: white;
+            font-size: 15px;
+        }
+
+        .cart {
+            display: flex;
+            font-size: 18px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .cart a {
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+        }
+
+        #main {
+            /* border: 2px solid black; */
+            height: 100vh;
+            width: 100%;
+            margin-top: 4.5%;
+        }
+
+        .container {
+            /* border: 2px solid red; */
+            height: 100%;
+            width: 99.1%;
+            margin: auto;
+            display: flex;
+        }
+
+        .card {
+            /* border: 2px solid yellow; */
+            width: 18%;
+            height: 100%;
+            background: #fff;
+        }
+
+        .sidebar {
+            width: 250px;
+            min-width: 250px;
+            border-right: 1px solid #ddd;
+            background: white;
+        }
+
+        .filter-title {
+            height: 55px;
+            padding: 18px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .filter-title span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .filter-title a {
+            font-size: 11px;
+            color: #2874f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .selected-filters {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filter-tag {
+            display: inline-block;
+            border: 1px solid #ddd;
+            background: #f7f7f7;
+            border-radius: 3px;
+            padding: 7px 9px;
+            margin: 0 5px 8px 0;
+            font-size: 11px;
+        }
+
+        .filter-tag span {
+            color: #777;
+            margin-right: 4px;
+        }
+
+        .show-more {
+            display: block;
+            border: none;
+            background: none;
+            color: #2874f0;
+            font-size: 11px;
+            font-weight: bold;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        .category-section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-section h4 {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .category span {
+            margin-right: 7px;
+        }
+
+        .category.current {
+            color: #222;
+            font-weight: bold;
+            padding-left: 18px;
+        }
+
+        .filter-section {
+            border-bottom: 1px solid #eee;
+            padding: 18px 20px;
+        }
+
+        .filter-heading {
+            display: flex;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .op {
+            outline: none;
+            border: none;
+        }
+
+        .occasion label {
+            display: block;
+            font-size: 15px;
+            color: #555;
+            margin-top: 12px;
+        }
+
+        .occasion input {
+            margin-right: 10px;
+        }
+
+        .color {
+            padding: 10px 15px;
+            display: flex;
+            height: 5%;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card1 {
+            /* border: 2px solid yellow; */
+            width: 82%;
+
+        }
+
+        .cardd {
+            /* border: 2px solid red; */
+            height: 7%;
+            width: 100%;
+            padding-left: 10px;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .name {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding-top: 15px;
+        }
+
+        .carddd {
+            /* border: 2px solid red; */
+            height: 7%;
+            width: 100%;
+            display: flex;
+            gap: 30px;
+            padding-left: 10px;
+            padding-top: 22px;
+            border-bottom: 1px solid lightgray;
+
+
+        }
+
+        .carddd a {
+            text-decoration: none;
+            color: #222;
+
+        }
+
+        .carddd a:hover {
+            color: red;
+        }
+
+        .cardcnt {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-top: 10px;
+            justify-content: space-evenly;
+        }
+
+        .car1 {
+            /* border: 2px solid red; */
+            /* border: 1px solid #454d5e; */
+            height: 59%;
+            width: 23%;
+        }
+
+        .car1 img {
+            width: 90%;
+            padding-left: 10px;
+            height: 220px;
+        }
+
+        .product-info {
+            padding: 10px 15px 20px;
+        }
+
+        .sponsored {
+            color: #878787;
+            font-size: 15px;
+        }
+
+        .co {
+            padding-top: 10px;
+            color: red;
+            font-size: 12px;
+        }
+
+        .product-info h3 {
+            margin-top: 7px;
+            font-size: 13px;
+            font-weight: normal;
+            color: #222;
+        }
+
+        .product-name {
+            color: #444;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .product-color {
+            color: #878787;
+            font-size: 11px;
+            margin-top: 6px;
+        }
+
+        .assured {
+            margin-top: 7px;
+            font-size: 13px;
+            color: #2874f0;
+        }
+
+        .price-row {
+            margin-top: 9px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-row strong {
+            font-size: 17px;
+        }
+
+        .price-row del {
+            color: #878787;
+            font-size: 11px;
+        }
+
+        .price-row span {
+            color: #388e3c;
+            font-size: 12px;
+        }
+
+
+
+
+
+
+
+
+        #footerc {
+            /* border: 2px solid red; */
+            height: 48vh;
+            width: 100%;
+            margin-top: 34%;
+
+        }
+
+        .footer {
+            background: #172337;
+            color: #fff;
+            padding: 20px 40px 20px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 160px;
+        }
+
+        .footer-column h4 {
+            color: #878787;
+            font-size: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column p {
+            color: #fff;
+            font-size: 13px;
+            line-height: 22px;
+        }
+
+        .border-left {
+            border-left: 1px solid #454d5e;
+            padding-left: 30px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 18px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .footer hr {
+            border: none;
+            border-top: 1px solid #454d5e;
+            margin: 30px 0 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer-bottom div {
+            margin: 10px;
+        }
+
+        .footer-bottom i {
+            color: #f7c948;
+            margin-right: 8px;
+        }
+
+        .payments img {
+            height: 20px;
+
+        }
+
+
+
+        .buy-buttons a {
+            text-decoration: none;
+        }
+
+
+        @media (max-width: 700px) {
+
+            #navbar {
+                height: 60px;
+                width: 100%;
+                padding: 8px 10px;
+                gap: 8px;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                z-index: 1000;
+            }
+
+            #navbarcnt {
+                width: 72px;
+                height: 35px;
+                flex-shrink: 0;
+                gap: 2px;
+            }
+
+            #navbarcnt img {
+                width: 55px;
+            }
+
+            .arrow {
+                width: 14px;
+                height: 25px;
+            } 
+
+            .searchCnt {
+                width: auto;
+                flex: 1;
+                height: 35px;
+                gap: 2px;
+                min-width: 0;
+            }
+
+            .searchCnt input {
+                width: 82%;
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            .serch {
+                margin-left: 2px;
+                padding: 0 4px;
+                flex-shrink: 0;
+            }
+
+            .serch span {
+                font-size: 20px;
+            }
+
+            #logincnt {
+                flex-shrink: 0;
+            }
+
+            #logincnt img {
+                width: 27px;
+                height: 27px;
+            }
+
+            #logincnt .option,
+            .morecnt,
+            .cart a {
+                display: none;
+            }
+
+            .cart {
+                flex-shrink: 0;
+                font-size: 18px;
+            }
+
+            #main {
+                width: 100%;
+                height: auto;
+                margin-top: 60px;
+            }
+
+            .container {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                display: block;
+            }
+
+            .card {
+                width: 100%;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                min-width: 0;
+                border-right: none;
+            }
+
+            .filter-title {
+                height: 50px;
+                padding: 16px 15px;
+            }
+
+            .selected-filters {
+                padding: 12px 15px;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .filter-tag {
+                font-size: 10px;
+                padding: 6px 8px;
+            }
+
+            .show-more {
+                display: inline-block;
+                margin-left: 5px;
+            }
+
+            .filter-section,
+            .color {
+                display: none;
+            }
+
+            .card1 {
+                width: 100%;
+                height: auto;
+            }
+
+            .cardd {
+                width: 100%;
+                height: auto;
+                min-height: 60px;
+                padding: 10px 12px;
+            }
+
+            .name {
+                padding-top: 0;
+                display: block;
+            }
+
+            .name h2 {
+                font-size: 17px;
+                margin-bottom: 5px;
+            }
+
+            .name p {
+                font-size: 11px;
+                color: #777;
+            }
+
+            .carddd {
+                height: 45px;
+                width: 100%;
+                padding: 0 12px;
+                gap: 20px;
+                align-items: center;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .carddd a {
+                font-size: 11px;
+                flex-shrink: 0;
+            }
+
+            .cardcnt {
+                width: 100%;
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1px;
+                padding: 1px;
+                background-color: #eee;
+            }
+
+            .car1 {
+                width: 100%;
+                height: auto;
+                min-height: 360px;
+                background: white;
+                overflow: hidden;
+            }
+
+            .car1 img {
+                width: 100%;
+                height: 190px;
+                padding: 8px;
+                object-fit: contain;
+                display: block;
+            }
+
+            .product-info {
+                padding: 8px 10px 15px;
+            }
+
+            .sponsored {
+                font-size: 10px;
+            }
+
+            .product-info h3 {
+                font-size: 12px;
+                margin-top: 5px;
+            }
+
+            .product-name {
+                font-size: 12px;
+                margin-top: 4px;
+            }
+
+            .product-color {
+                font-size: 10px;
+                margin-top: 5px;
+            }
+
+            .assured {
+                font-size: 11px;
+                margin-top: 6px;
+            }
+
+            .price-row {
+                margin-top: 7px;
+                gap: 5px;
+                flex-wrap: wrap;
+            }
+
+            .price-row strong {
+                font-size: 15px;
+            }
+
+            .price-row del {
+                font-size: 10px;
+            }
+
+            .price-row span {
+                font-size: 10px;
+            }
+
+            .co {
+                font-size: 10px;
+                padding-top: 6px;
+            }
+
+            #footerc {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            .footer {
+                padding: 25px 15px 15px;
+            }
+
+            .footer-top {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px 15px;
+            }
+
+            .footer-column {
+                min-width: 0;
+            }
+
+            .footer-column h4 {
+                font-size: 10px;
+                margin-bottom: 10px;
+            }
+
+            .footer-column a {
+                font-size: 11px;
+                margin-bottom: 7px;
+            }
+
+            .footer-column p {
+                font-size: 10px;
+                line-height: 17px;
+            }
+
+            .border-left {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .social-icons i {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+
+            .footer hr {
+                margin: 20px 0 10px;
+            }
+
+            .footer-bottom {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 5px;
+                font-size: 10px;
+            }
+
+            .footer-bottom div {
+                margin: 5px;
+            }
+
+            .payments {
+                grid-column: 1 / -1;
+            }
+
+            .payments img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="screencnt">
+        <div id="navbar">
+            <div id="navbarcnt">
+                <img
+                    src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-mp-c815b6.svg">
+                <select class="arrow">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="searchCnt">
+                <button class="serch"><span class="material-symbols-outlined"> search </span></button>
+                <input type="text" placeholder="Search for products, brands and more">
+            </div>
+
+            <div id="logincnt">
+                <a href="login.html"><img width="30px" height="30px"
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg"></a>
+                <div>
+                    <select class="option">
+                        <option>Login</option>
+                        <option>my profile</option>
+                        <option>Rewards</option>
+                        <option>Orders</option>
+                        <option>Wishlist</option>
+                        <option>Gift Cards</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <select class="morecnt">
+                    <option>More</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="cart">
+                <i class="fa fa-cart-shopping"></i>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+
+        <div id="main">
+
+            <div class="container">
+
+                <div class="card">
+
+                    <aside class="sidebar">
+
+                        <div class="filter-title">
+                            <span>Filters</span>
+                            <a href="#">CLEAR ALL</a>
+                        </div>
+
+                        <div class="selected-filters">
+                            <div class="filter-tag">
+                                <span>×</span> EL PASO
+                            </div>
+
+                            <div class="filter-tag">
+                                <span>×</span> Min - ₹2000+
+                            </div>
+
+                            <div class="filter-tag">
+                                <span>×</span> DOCTOR EXTRA SOFT
+                            </div>
+
+                            <button class="show-more">SHOW MORE</button>
+                        </div>
+
+
+                        <!-- Brand -->
+                        <div class="filter-section">
+
+                            <div class="filter-heading">
+                                <span>BRAND</span>
+                                <select class="op"></select>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </div>
+                        </div>
+
+
+                        <!-- Gender -->
+                        <div class="filter-section">
+                            <div class="filter-heading">
+                                <span>GENDER BRAND</span>
+
+                                <select class="op"></select>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </div>
+                        </div>
+
+
+                        <!-- Type -->
+                        <div class="filter-section">
+                            <div class="filter-heading">
+                                <span>TYPE BRAND</span>
+
+                                <select class="op"></select>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </div>
+                        </div>
+
+
+                        <!-- Occasion -->
+                        <div class="filter-section occasion">
+
+                            <div class="filter-heading">
+                                <span>OCCASION BRAND</span>
+                                <select class="op"></select>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </div>
+
+                            <label>
+                                <input type="checkbox">
+                                Casual
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Ethnic
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Formal
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Party
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Sports
+                            </label>
+                        </div>
+
+                        <div class="color">
+                            <p>Color</p>
+                            <select class="op">
+                                <option></option>
+                                <option>Red</option>
+                                <option> Blue</option>
+                                <option>Yellow</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-section occasion">
+
+                            <div class="filter-heading">
+                                <span>SIZE</span>
+                            </div>
+
+                            <label>
+                                <input type="checkbox">
+                                1
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                2
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                3
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                4
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                5
+                            </label>
+                            <label>
+                                <input type="checkbox">
+                                6
+                            </label>
+                            <label>
+                                <input type="checkbox">
+                                7
+                            </label>
+                            <label>
+                                <input type="checkbox">
+                                8
+                            </label>
+                            <label>
+                                <input type="checkbox">
+                                9
+                            </label>
+
+                        </div>
+
+                        <div class="filter-section occasion">
+
+                            <div class="filter-heading">
+                                <span>Discount</span>
+                            </div>
+
+                            <label>
+                                <input type="checkbox">
+                                20% or more
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                30% or more
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                40% or more
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                50% or more
+                            </label>
+
+                        </div>
+
+                        <div class="filter-section occasion">
+
+                            <div class="filter-heading">
+                                <span>Offers</span>
+                            </div>
+
+                            <label>
+                                <input type="checkbox">
+                                Buy More, Save More
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Special Price
+                            </label>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="card1">
+
+                    <div class="cardd">
+
+                        <div class="name">
+                            <h2>Men’s Sandals & Floaters</h2>
+                            <p>(Showing 1 – 40 products of 410 products)</p>
+                        </div>
+
+                    </div>
+                    <div class="carddd">
+
+                        <a href="#">Sort By</a>
+                        <a href="#">Popularity</a>
+                        <a href="#">Price -- Low to High</a>
+                        <a href="#">Price -- High to Low</a>
+                        <a href="#">Newest First</a>
+
+                    </div>
+
+                    <div class="cardcnt">
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/k/a/w/9-01-9-bellion-brown-original-imahmskhg6akjex9.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">Sponsored</span>
+
+                                <h3>BELLION</h3>
+
+                                <p class="product-name">
+                                    Men Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Brown, Tan, 7
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹619</strong>
+                                    <del>₹2,999</del>
+                                    <span>79% off</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/p/3/r/6-happy-3-6-0-kelsey-black-original-imahkh44zytyzmpz.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">Sponsored</span>
+
+                                <h3>Kelsey</h3>
+
+                                <p class="product-name">
+                                    Men Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Black , 6
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹734</strong>
+                                    <del>₹2,999</del>
+                                    <span>75% off</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/q/f/p/7-7929822-41-labbin-brown-original-imahe5yt8t9w9zzp.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">Roamra</span>
+
+                                <!-- <h3>Roamra</h3> -->
+
+                                <p class="product-name">
+                                    Men Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Black , 8
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹414</strong>
+                                    <del>₹1,999</del>
+                                    <span>79% off</span>
+                                </div>
+                                <p class="co">Only Few left</p>
+
+                            </div>
+                        </div>
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shopsy-sandal/f/t/p/7-shpsy-snd-01-brn-7-0-jempa-brown-original-imahnahfdvcnhxvm.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">JEMPA</span>
+
+                                <!-- <h3>aadi</h3> -->
+
+                                <p class="product-name">
+                                    Men Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Brown , 6
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹379</strong>
+                                    <del>₹999</del>
+                                    <span>62% off</span>
+                                </div>
+
+                                <p class="co">Only Few left</p>
+
+                            </div>
+                        </div>
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/w/j/3/9-san-brn-9-9-bellion-brown-original-imahkffzpurwkghy.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">Sponsored</span>
+
+                                <h3>BELLION</h3>
+
+                                <p class="product-name">
+                                    Men Casual Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Brown , 9
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹595</strong>
+                                    <del>₹2,499</del>
+                                    <span>76% off</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/s/o/b/7-01-7-bellion-green-original-imahkrcmmyhx2smx.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">Sponsored</span>
+
+                                <h3>BELLION</h3>
+
+                                <p class="product-name">
+                                    Men Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Green, Brown, 7
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹619</strong>
+                                    <del>₹2,999</del>
+                                    <span>79% off</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/0/l/h/7-rw-net-o1-brown-06-6-0-rajni-walk-brown-original-imahzkf79gjqv4sq.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">Rajni Walk</span>
+
+                                <!-- <h3>aadi</h3> -->
+
+                                <p class="product-name">
+                                    Men flats Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Black , 8
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹409</strong>
+                                    <del>₹999</del>
+                                    <span>59% off</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="car1">
+                            <div>
+                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/s/p/m/9-3302-9-0-walk-wise-brown-original-imahmfyxzddhschq.jpeg?q=70"
+                                    alt="">
+                            </div>
+                            <div class="product-info">
+
+                                <span class="sponsored">WALKWISE</span>
+
+
+                                <p class="product-name">
+                                    Men Sandal
+                                </p>
+
+                                <p class="product-color">
+                                    Brown , 8
+                                </p>
+
+                                <div class="assured">
+                                    🛡️ <b>Assured</b>
+                                </div>
+
+                                <div class="price-row">
+                                    <strong>₹432</strong>
+                                    <del>₹1,299</del>
+                                    <span>66% off</span>
+                                </div>
+                                <p class="co">Only Few left</p>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="footerc">
+                <footer class="footer">
+
+                    <div class="footer-top">
+
+                        <div class="footer-column">
+                            <h4>ABOUT</h4>
+                            <a href="#">Contact Us</a>
+                            <a href="#">About Us</a>
+                            <a href="#">Careers</a>
+                            <a href="#">Flipkart Stories</a>
+                            <a href="#">Press</a>
+                            <a href="#">Corporate Information</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>GROUP COMPANIES</h4>
+                            <a href="#">Myntra</a>
+                            <a href="#">Cleartrip</a>
+                            <a href="#">Shopsy</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>HELP</h4>
+                            <a href="#">Payments</a>
+                            <a href="#">Shipping</a>
+                            <a href="#">Cancellation & Returns</a>
+                            <a href="#">FAQ</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>CONSUMER POLICY</h4>
+                            <a href="#">Cancellation & Returns</a>
+                            <a href="#">Terms Of Use</a>
+                            <a href="#">Security</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Sitemap</a>
+                            <a href="#">Grievance Redressal</a>
+                            <a href="#">EPR Compliance</a>
+                            <a href="#">FSSAI Food Safety Connect</a>
+                        </div>
+
+                        <div class="footer-column border-left">
+                            <h4>Mail Us:</h4>
+                            <p>
+                                Flipkart Internet Private Limited,<br>
+                                Buildings Alyssa, Begonia &<br>
+                                Clove Embassy Tech Village,<br>
+                                Outer Ring Road,<br>
+                                Bengaluru, Karnataka, India
+                            </p>
+
+                            <h4>Social:</h4>
+
+                            <div class="social-icons">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-x-twitter"></i>
+                                <i class="fab fa-youtube"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>Registered Office Address:</h4>
+                            <p>
+                                Flipkart Internet Private Limited,<br>
+                                Buildings Alyssa, Begonia &<br>
+                                Clove Embassy Tech Village,<br>
+                                Outer Ring Road,<br>
+                                Bengaluru, Karnataka, India
+                            </p>
+
+                            <p>
+                                CIN : U51109KA2012PTC066107<br>
+                                Telephone : 044-45614700
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="footer-bottom">
+
+                        <div><i class="fa-solid fa-store"></i> Become a Seller</div>
+
+                        <div><i class="fa-solid fa-bullhorn"></i> Advertise</div>
+
+                        <div><i class="fa-solid fa-gift"></i> Gift Cards</div>
+
+                        <div><i class="fa-solid fa-circle-question"></i> Help Center</div>
+
+                        <div>© 2007-2026 Flipkart.com</div>
+
+                        <div class="payments">
+                            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-69e7ec.svg"
+                                alt="Payments">
+                        </div>
+
+                    </div>
+
+                </footer>
+
+
+            </div>
+
+
+        </div>
+
+</body>
+
+</html>
